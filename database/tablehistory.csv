@@ -1,0 +1,5 @@
+transaction_id,karta_id,transaction_type,amount,transaction_date
+1,1,DEPOSIT,500.00,2023-12-28 10:00:00
+2,1,WITHDRAW,200.00,2023-12-28 11:00:00
+3,2,DEPOSIT,1000.00,2023-12-28 12:00:00
+23,2,DEPOSIT,10.00,2023-12-28 15:38:51

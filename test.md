@@ -4,6 +4,7 @@
 3. [3. Jeszcze inna sekcja](#3-jeszcze-inna-sekcja)
 ... (i tak dalej, dla innych sekcji)
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## 1. Opis założeń projektu
 Treść dotycząca opisu założeń projektu...
 

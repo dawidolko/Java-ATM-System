@@ -5,7 +5,7 @@ Witaj w moim repozytorium GitHub! Repozytorium to zawiera zestaw plików SQL nie
 
 ### Zawartość Repozytorium
 W repozytorium znajdziesz następujące pliki:
-- `kart..sql`: Skrypt do tworzenia bazy danych.
+- `karty.sql`: Skrypt do tworzenia bazy danych.
 - `stan_konta.sql`: Skrypt do tworzenia tabel w utworzonej bazie danych.
 - `tablehistory.sql`: Skrypt zawierający przykładowe dane do wstępnego zapełnienia tabel.
 

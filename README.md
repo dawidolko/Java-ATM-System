@@ -7,16 +7,16 @@
 ### Rzeszów 2024
 
 ## Spis treści
-1.	[1. Opis założeń projektu](#1-opis-założeń-projektu)
-2.	[2. Specyfikacja wymagań](#2-specyfikacja-wymagań)
-3.	[3. Opis struktury projektu](#3-opis-struktury-projektu)
-4.	[4. Harmonogram realizacji projektu  (diagram Gantta)](#4-harmonogram-realizacji-projektu)
-5.	[5. Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
-6.	[6. Podsumowanie](#6-podsumowanie)
-7.	[7. Literatura](#7-literatura)
+1. [Opis założeń projektu](#1-opis-założeń-projektu)
+2. [Specyfikacja wymagań](#2-specyfikacja-wymagań)
+3. [Opis struktury projektu](#3-opis-struktury-projektu)
+4. [Harmonogram realizacji projektu (diagram Gantta)](#4-harmonogram-realizacji-projektu-diagram-gantta)
+5. [Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
+6. [Podsumowanie](#6-podsumowanie)
+7. [Literatura](#7-literatura)
 
  
-## 1.	Opis założeń projektu
+## 1. Opis założeń projektu
 W dzisiejszych czasach, gdy sektor bankowy ewoluuje z niespotykaną dotąd prędkością, napotykamy na wyzwania związane z adaptacją technologii i utrzymaniem wysokiej jakości obsługi klienta. Jednym z kluczowych elementów tego ekosystemu są bankomaty, stanowiące ważny punkt kontaktu z klientem. Niestety, wraz ze wzrostem złożoności operacji bankowych i rosnącymi oczekiwaniami klientów, bankomaty często stają się obiektem błędów operacyjnych, awarii, a nawet przestępczości. Te problemy, choć nie związane bezpośrednio z główną działalnością banku, mają istotny wpływ na wizerunek instytucji finansowej, satysfakcję klientów oraz efektywność operacyjną.
 Opracowany innowacyjny system symulacji pracy bankomatu. Jest to narzędzie, które nie tylko pozwala na dokładne modelowanie i analizę różnorodnych scenariuszy działania bankomatów, ale także służy jako platforma szkoleniowa dla pracowników. Dzięki temu systemowi możliwe jest wykrywanie i zapobieganie potencjalnym problemom, a także optymalizacja procesów obsługi klienta. 
 Projekt "Bankomat" to kompleksowa aplikacja GUI, której celem jest symulacja operacji wykonywanych na rzeczywistym bankomacie. Zapewnia użytkownikom interfejs graficzny, za pośrednictwem którego mogą weryfikować tożsamość za pomocą karty elektronicznej i numeru PIN, a następnie przeprowadzać podstawowe operacje bankowe. Aplikacja obsługuje karty Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credit Bureau.
@@ -37,7 +37,7 @@ Cele i założenia projektu
 5.	Sposób rozwiązania problemu: Problem zostanie rozwiązany poprzez etapowy rozwój oprogramowania, rozpoczynając od projektu interfejsu użytkownika, a kończąc na integracji z rzeczywistymi systemami bankowymi. Wynikiem prac będzie aplikacja pozwalająca na symulację różnych scenariuszy użytkowania bankomatu.
 6.	Założenia do projektu: W projekcie założono, że aplikacja będzie elastyczna i skalowalna, umożliwiająca ciągłe dodawanie nowych funkcjonalności oraz łatwe adaptacje do zmieniających się wymagań bankowości cyfrowej. 
 
-## 2.	Specyfikacja wymagań
+## 2. Specyfikacja wymagań
 2.1.	Wymagania funkcjonalne
 •	Autentykacja Użytkownika:
 - Weryfikacja posiadacza karty na podstawie numeru PIN zapisanego w bazie danych.
@@ -88,7 +88,7 @@ Cele i założenia projektu
 •	Testowalność:
 - Możliwość przeprowadzenia pełnej gamy testów (jednostkowych, integracyjnych, systemowych, akceptacyjnych) w celu zapewnienia jakości i niezawodności.
  
-## 3.	Opis struktury projektu
+## 3. Opis struktury projektu
 Wykorzystywany język i narzędzia:
 Java JDK: Zalecana wersja: Java Development Kit (JDK) 17 – Jest to najnowsza długoterminowa wersja wsparcia (LTS), która zapewnia stabilność i szeroki zakres funkcji, w tym poprawki bezpieczeństwa i wydajności.
 Środowisko programistyczne: IntelliJ IDEA Najnowsza stabilna wersja: IntelliJ IDEA 2022.1 – Zawiera ulepszenia wydajności, lepsze wsparcie dla najnowszych wersji Javy, jak również zaawansowane narzędzia do analizy kodu i faktoryzacji.
@@ -127,7 +127,7 @@ Struktury przedstawione na diagramach odnoszą się do architektury oprogramowan
 Każda klasa i okno zawierają metody i atrybuty odpowiadające za specyficzne zachowanie lub prezentację danych w aplikacji. Na przykład, w klasie „PaymentWindows” znajdują się metody do zarządzania płatnościami, jak „depositMoney()” czy „updateBalance()”, natomiast „HistoryWindow” zarządza wyświetlaniem historii transakcji z użyciem metod takich jak „loadTransactionHistory()”. Diagram wskazuje na modularną i obiektową budowę systemu, gdzie każdy komponent jest odpowiedzialny za odizolowany zestaw funkcjonalności. 
 
 
-## 4.	Harmonogram realizacji projektu
+## 4. Harmonogram realizacji projektu (diagram Gantta)
 Poniżej zamieszono harmonogram realizacji projektu. 
  
  
@@ -140,7 +140,7 @@ Na rysunku 3 przedstawiono zrzut ekranu pokazujący historię commitów.
   
 Rysunek 5. Historia comitów 
 
-## 5.	Prezentacja warstwy użytkowej projektu
+## 5. Prezentacja warstwy użytkowej projektu
 Program „Bankomat” działa po połączeniu się wszystkich klas z tabelami z bazy, którą łączymy przy pomocy SQL i JDBC za pomocą SQL-Connecor-j-8.2.0.jar, aby to uczynić musimy pobrać plik JAR ze strony https://dev.mysql.com/downloads/connector/j/. Wybrać platformę zgodnie z poniższym rysunkiem.
 
  
@@ -313,7 +313,7 @@ Bezpieczeństwo i Walidacja: Program zawiera szereg mechanizmów bezpieczeństwa
 Użytkownik i Interfejs: Interfejs użytkownika został zaprojektowany z myślą o prostocie i intuicyjności, co pozwala użytkownikowi na łatwe nawigowanie i wykonanie potrzebnych operacji finansowych bez konieczności zaawansowanej wiedzy technicznej.
 Program jako całość stanowi kompletny system do zarządzania kontem bankowym, który integruje kluczowe funkcje wymagane dla nowoczesnych aplikacji bankowych. Zapewnia on użytkownikowi kontrolę nad swoimi finansami poprzez proste w użyciu narzędzia do monitorowania i zarządzania swoimi środkami oraz historią transakcji. Jest to przykład dobrze zintegrowanego oprogramowania, które skupia się na użytkowniku i jego potrzebach, zapewniając przy tym bezpieczeństwo i zaufanie do przeprowadzanych operacji finansowych.
  
-## 6.	Podsumowanie
+## 6. Podsumowanie
 Opracowanie aplikacji GUI: Stworzono zaawansowaną aplikację z graficznym interfejsem użytkownika, która naśladuje działanie rzeczywistego bankomatu. Interfejs został zaprojektowany tak, aby był intuicyjny i łatwy w obsłudze, co umożliwia użytkownikom wykonywanie różnych operacji bankowych w sposób, który odzwierciedla rzeczywiste doświadczenia z bankomatem.
 Wykorzystanie Java Swing i MySQL: Aplikacja została zbudowana w środowisku Java Swing, co zapewnia stabilność i efektywność działania. Zastosowanie MySQL do zarządzania bazą danych gwarantuje bezpieczeństwo i integralność danych, co jest kluczowe w symulacji operacji bankowych.
 Implementacja funkcji bankowych: Zaimplementowano podstawowe funkcje bankomatu, takie jak weryfikacja PIN, sprawdzanie salda, realizacja wypłat i wpłat gotówki oraz przeglądanie historii transakcji. Te funkcje zapewniają realistyczne doświadczenie korzystania z bankomatu, co jest niezbędne w szkoleniach i edukacji pracowników banków.
@@ -332,7 +332,7 @@ Dalsze planowane prace rozwojowe projektu obejmują:
 8.	Wdrażanie aktualizacji: Regularne aktualizacje oprogramowania w celu wprowadzania nowych funkcji i utrzymania zgodności z najnowszymi standardami branżowymi.
 Każdy z tych punktów można by dalej rozwijać, uwzględniając specyficzne wymagania i cele projektu.  
 
-## 7.	Literatura
+## 7. Literatura
 W celu zgłębienia wiedzy na temat systemów bankomatów oraz ogólnie systemów transakcyjnych, można sięgnąć do następujących źródeł:
 Książki i Podręczniki:
 1. "Bank 3.0: Why Banking Is No Longer Somewhere You Go But Something You Do" - Brett King. Książka ta dostarcza wglądu w zmiany technologiczne w bankowości i przyszłość transakcji finansowych.

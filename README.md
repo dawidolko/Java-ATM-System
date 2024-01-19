@@ -11,9 +11,8 @@
 2. [Specyfikacja wymagań](#2-specyfikacja-wymagań)
 3. [Opis struktury projektu](#3-opis-struktury-projektu)
 4. [Harmonogram realizacji projektu (diagram Gantta)](#4-harmonogram-realizacji-projektu-diagram-gantta)
-5. [Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
-6. [Podsumowanie](#6-podsumowanie)
-7. [Literatura](#7-literatura)
+5. [Podsumowanie](#5-podsumowanie)
+6. [Literatura](#6-literatura)
 
  
 ## 1. Opis założeń projektu

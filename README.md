@@ -7,13 +7,13 @@
 ### Rzeszów 2024
 
 ## Spis treści
-1.	[Opis założeń projektu](##1.-Opis-założeń-projektu)
-2.	[Specyfikacja wymagań](#2.	Specyfikacja wymagań)
-3.	[Opis struktury projektu](#3.	Opis struktury projektu)
-4.	[Harmonogram realizacji projektu  (diagram Gantta)](#4.	Harmonogram realizacji projektu  (diagram Gantta))
-5.	[Prezentacja warstwy użytkowej projektu](#5. Prezentacja warstwy użytkowej projektu)
-6.	[Podsumowanie](#6.	Podsumowanie)
-7.	[Literatura](#7.	Literatura)
+1.	[Opis założeń projektu](#1-opis-założeń-projektu)
+2.	[Specyfikacja wymagań](#2-specyfikacja-wymagań)
+3.	[Opis struktury projektu](#3-opis-struktury-projektu)
+4.	[Harmonogram realizacji projektu  (diagram Gantta)](#4-harmonogram-realizacji-projektu)
+5.	[Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
+6.	[Podsumowanie](#6-podsumowanie)
+7.	[Literatura](#7-literatura)
 
  
 ## 1.	Opis założeń projektu
@@ -127,7 +127,7 @@ Struktury przedstawione na diagramach odnoszą się do architektury oprogramowan
 Każda klasa i okno zawierają metody i atrybuty odpowiadające za specyficzne zachowanie lub prezentację danych w aplikacji. Na przykład, w klasie „PaymentWindows” znajdują się metody do zarządzania płatnościami, jak „depositMoney()” czy „updateBalance()”, natomiast „HistoryWindow” zarządza wyświetlaniem historii transakcji z użyciem metod takich jak „loadTransactionHistory()”. Diagram wskazuje na modularną i obiektową budowę systemu, gdzie każdy komponent jest odpowiedzialny za odizolowany zestaw funkcjonalności. 
 
 
-## 4.	Harmonogram realizacji projektu  (diagram Gantta)
+## 4.	Harmonogram realizacji projektu
 Poniżej zamieszono harmonogram realizacji projektu. 
  
  

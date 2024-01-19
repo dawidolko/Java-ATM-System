@@ -1,7 +1,7 @@
 ## Baza danych do projektu
 
 ### Wprowadzenie
-Witaj w moim repozytorium GitHub! Repozytorium to zawiera zestaw plików SQL niezbędnych do stworzenia bazy danych i tabel, które są podstawą mojego projektu. Pliki te zostały przygotowane do łatwego importu w środowisku PHPMyAdmin, działającym na lokalnym serwerze.
+Folder to zawiera zestaw plików SQL niezbędnych do stworzenia bazy danych i tabel, które są podstawą mojego projektu. Pliki te zostały przygotowane do łatwego importu w środowisku PHPMyAdmin, działającym na lokalnym serwerze.
 
 ### Zawartość Repozytorium
 W repozytorium znajdziesz następujące pliki:

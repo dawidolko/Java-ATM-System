@@ -7,13 +7,13 @@
 ### Rzeszów 2024
 
 ## Spis treści
-1.	[Opis założeń projektu](#1-opis-założeń-projektu)
-2.	[Specyfikacja wymagań](#2-specyfikacja-wymagań)
-3.	[Opis struktury projektu](#3-opis-struktury-projektu)
-4.	[Harmonogram realizacji projektu  (diagram Gantta)](#4-harmonogram-realizacji-projektu)
-5.	[Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
-6.	[Podsumowanie](#6-podsumowanie)
-7.	[Literatura](#7-literatura)
+1.	[1. Opis założeń projektu](#1-opis-założeń-projektu)
+2.	[2. Specyfikacja wymagań](#2-specyfikacja-wymagań)
+3.	[3. Opis struktury projektu](#3-opis-struktury-projektu)
+4.	[4. Harmonogram realizacji projektu  (diagram Gantta)](#4-harmonogram-realizacji-projektu)
+5.	[5. Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
+6.	[6. Podsumowanie](#6-podsumowanie)
+7.	[7. Literatura](#7-literatura)
 
  
 ## 1.	Opis założeń projektu

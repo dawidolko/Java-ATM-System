@@ -327,21 +327,18 @@ Ogólnie: Dashboard jest zaprojektowany w taki sposób, aby umożliwić łatwą 
 
 - **Obsługa Zdarzeń**: Obsługa Przycisku "ENTER": Po kliknięciu tego przycisku, kod przetwarza wprowadzony PIN i porównuje go z PIN-em przechowywanym w bazie danych. Jeśli PIN jest poprawny, użytkownik może przejść dalej, jeśli nie - może zostać wyświetlony komunikat o błędzie lub blokada.
 
- <br>![projekt](img/photo18.png)
-
 - **Powrót do Głównego Menu**: Przycisk "RETURN TO THE MAIN MENU" pozwala użytkownikowi anulować proces i wrócić do poprzedniego interfejsu.
 
 - **Komunikaty o Błędach**: Na jednym ze zdjęć widać komunikat o zablokowanym koncie, co oznacza, że system zaimplementował mechanizm bezpieczeństwa, który blokuje dostęp po kilku nieudanych próbach wprowadzenia PIN-u. Na innym zdjęciu pojawia się komunikat informujący, że PIN jest za krótki, co sugeruje, że system oczekuje czterocyfrowego kodu.
 
 - **Backend (Kod)**: W kodzie, klasa PinWindow jest odpowiedzialna za tworzenie i zarządzanie tym oknem. Używa ona metody checkPin do weryfikacji wprowadzonego PIN-u. System zlicza nieudane próby wprowadzenia PIN-u i może zablokować dostęp do konta na określony czas (lockoutEndTime), co zostało pokazane w jednym z komunikatów. W przypadku poprawnego wprowadzenia PIN-u, aplikacja prawdopodobnie przechodzi do kolejnego okna lub wykonuje kolejną akcję, która nie jest widoczna w przesłanym kodzie.
 
- <br>![projekt](img/photo19.png)
 
 Ogólna Analiza: PinWindow jest kluczowym elementem aplikacji bankowej, który zapewnia bezpieczeństwo dostępu do konta użytkownika. Weryfikacja kodu PIN, obsługa błędów i blokada konta po nieudanych próbach to standardowe praktyki w aplikacjach wymagających autoryzacji. Interfejs jest prosty i bezpośredni, co minimalizuje ryzyko błędów ze strony użytkownika i zwiększa bezpieczeństwo.
 
 ### MenuWindow - Centrum Operacji Bankowych
 
- <br>![projekt](img/photo20.png)
+ <br>![projekt](img/photo18.png)
 
 - **Nagłówek "WELCOME TO YOUR ACCOUNT"**: Przywitanie użytkownika i potwierdzenie, że został pomyślnie zautoryzowany.
 
@@ -373,7 +370,7 @@ MenuWindow jest zaprojektowane, aby być przyjaznym dla użytkownika centrum zar
 
 ### BalanceWindow - Wyświetlanie Sald Konta
 
- <br>![projekt](img/photo21.png)
+ <br>![projekt](img/photo19.png)
 
 - **Nagłówek "BALANCE"**: Wyraźnie informuje użytkownika, że znajduje się w sekcji dotyczącej salda konta.
 

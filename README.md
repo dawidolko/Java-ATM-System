@@ -397,8 +397,7 @@ BalanceWindow to proste i intuicyjne narzędzie, które umożliwia użytkownikom
 
 ### PaycheckWindow - Wypłata Środków
 
-  <br>![projekt](img/photo22.png)
-  <br>![projekt](img/photo23.png)
+  <br>![projekt](img/photo20.png)
 
 - **Opis**: Okno to służy do wypłaty środków z konta użytkownika. Funkcjonalność ta jest widoczna w kodzie w klasie PaycheckWindow, gdzie użytkownik wpisuje kwotę, którą chce wypłacić, a następnie potwierdza operację przyciskiem "ENTER".
 
@@ -420,7 +419,7 @@ BalanceWindow to proste i intuicyjne narzędzie, które umożliwia użytkownikom
 
 ### PaymentWindow - Wpłata Środków
 
- <br>![projekt](img/photo24.png)
+  <br>![projekt](img/photo21.png)
 
 - **Opis**: Okno „PaymentWindow” działa podobnie do PaycheckWindow, ale służy do wpłacania pieniędzy na konto użytkownika. Użytkownik wpisuje kwotę do wpłaty i potwierdza operację.
 
@@ -445,7 +444,7 @@ Oba okna dialogowe są zaprojektowane w sposób prosty i intuicyjny, co sprzyja 
 
 ### HistoryWindow - Historia Transakcji
 
- <br>![projekt](img/photo25.png)
+   <br>![projekt](img/photo22.png)
 
 - **Opis**: HistoryWindow jest oknem w aplikacji bankowej, które wyświetla historię transakcji przeprowadzonych przez użytkownika.
 

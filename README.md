@@ -191,25 +191,24 @@ Projekt realizowany był z wykorzystaniem systemu kontroli wersji Git, wszystkie
 
 Program „Bankomat” działa po połączeniu się wszystkich klas z tabelami z bazy, którą łączymy przy pomocy SQL i JDBC za pomocą SQL-Connecor-j-8.2.0.jar. Aby to uczynić, musimy pobrać plik JAR ze strony [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/). Wybierzmy platformę zgodnie z poniższym rysunkiem.
 
-![Rysunek 6, 7](link_do_zdjęcia_6_7)
+ <br>![projekt](img/photo7.png)
 
 Gdy już został pobrany, trzeba go wgrać do projektu w IntelliJ IDEA. Po wykonaniu tego kroku, przejdźmy do ustawień projektu, klikając FILE -> Project Structure, a następnie postępujmy zgodnie z poniższym zdjęciem.
 
-![Rysunek 8](link_do_zdjęcia_8)
+ <br>![projekt](img/photo8.png)
 
 Następnie pobrany plik przerzućmy do folderu projektu, jak to pokazano na poniższym zdjęciu.
 
-![Rysunek 9](link_do_zdjęcia_9)
+ <br>![projekt](img/photo9.png)
 
 Gdy już to zostało wykonane, tworzymy bazę danych za pomocą xampp, którego można pobrać z Internetu pod tym linkiem [https://www.apachefriends.org/pl/index.html](https://www.apachefriends.org/pl/index.html). Po zainstalowaniu i uruchomieniu xampp, aktywujmy moduły Apache i MySQL, jak to przedstawia poniższe zdjęcie.
 
-![Rysunek 10](link_do_zdjęcia_10)
+ <br>![projekt](img/photo10.png)
 
 Po połączeniu i uruchomieniu portów Apache i MySQL, przejdźmy do połączenia się z przeglądarki z adresem: [http://localhost/phpmyadmin](http://localhost/phpmyadmin), który automatycznie przeniesie nas do naszego serwera lokalnego. Tam, klikając zakładkę „New”, tworzymy nową bazę danych o nazwie „atm”, co jest ważne, ponieważ program nie połączy się z bazą danych o innej nazwie, co skutkuje błędem. Po utworzeniu bazy „atm” przejdźmy do zakładki „SQL” i dodajmy 3 zapytania tworzące tabele z wartościami. Możemy dostosować wartości według preferencji, ale pamiętajmy, aby kolumny miały dokładnie takie same nazwy, jakie podano poniżej, ponieważ program „Bankomat” będzie korzystał z tych nazw.
 
-![Rysunek 11](link_do_zdjęcia_11)
-![Rysunek 12](link_do_zdjęcia_12)
-![Rysunek 13](link_do_zdjęcia_13)
+
+ <br>![projekt](img/photo11.png)
 
 ### Program "Bankomat"
 
@@ -273,7 +272,8 @@ Podczas gdy Main służy do pobierania danych z bazy danych i uruchamiania UI, M
 
 ### Interfejs użytkownika Dashboard
 
-![Zdjęcie Dashboard](link_do_zdjecia_dashboard.jpg)
+
+ <br>![projekt](img/photo12.png)
 
 - **Nagłówek 'MAIN MENU'**: Tytuł ekranu, informujący użytkownika, że znajduje się w głównym menu aplikacji.
 
@@ -289,11 +289,11 @@ Podczas gdy Main służy do pobierania danych z bazy danych i uruchamiania UI, M
 
 - **Przyciski 'EXPORT' i 'IMPORT'**: Umożliwiają eksport danych do pliku CSV oraz import danych z pliku CSV.
 
-![Zdjęcie export/import](link_do_zdjecia_export_import.jpg)
+ <br>![projekt](img/photo13.png)
 
 - **Ekrany wyboru pliku**: Pojawiają się po kliknięciu przycisków 'EXPORT' lub 'IMPORT'. Pozwalają użytkownikowi na wybór lokalizacji, do której eksportować dane, lub z której importować dane.
 
-![Zdjęcie listy rozwijalnej](link_do_zdjecia_listy_rozwijalnej.jpg)
+ <br>![projekt](img/photo14.png)
 
 - **Rozszerzona lista rozwijana**: Wyświetla wszystkie dostępne typy kart, które użytkownik może wybrać. W tym przypadku pokazuje różne rodzaje kart płatniczych, takie jak Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credi Bureau.
 
@@ -307,7 +307,7 @@ Ogólnie: Dashboard jest zaprojektowany w taki sposób, aby umożliwić łatwą 
 
 ### PinWindow - Interfejs wprowadzania PIN
 
-![Zdjęcie PinWindow](link_do_zdjecia_pin_window.jpg)
+ <br>![projekt](img/photo15.png)
 
 - **Nagłówek "ENTER YOUR CARD PIN"**: Informuje użytkownika, że w tym miejscu powinien wprowadzić swój PIN.
 
@@ -317,17 +317,17 @@ Ogólnie: Dashboard jest zaprojektowany w taki sposób, aby umożliwić łatwą 
 
 - **Przycisk "RETURN TO THE MAIN MENU"**: Umożliwia powrót do głównego menu bez wprowadzania PIN-u.
 
-![Zdjęcie walidacji](link_do_zdjecia_walidacji.jpg)
+ <br>![projekt](img/photo16.png)
 
 - **Walidacja PIN-u**: Wprowadzony PIN jest walidowany przy użyciu zdefiniowanych reguł. W przypadku, gdy PIN jest za krótki (mniej niż 4 cyfry), użytkownik otrzyma komunikat o błędzie, informujący o niewłaściwej długości PIN-u.
 
 - **Blokada Konta**: Jeśli użytkownik wprowadzi błędny PIN kilka razy z rzędu, konto zostaje zablokowane na określony czas, co jest sygnalizowane przez odpowiedni komunikat z licznikiem sekund pozostałych do odblokowania.
 
-![Zdjęcie alertu o krótkim haśle](link_do_zdjecia_alertu_o_krotkim_hasle.jpg)
+ <br>![projekt](img/photo17.png)
 
 - **Obsługa Zdarzeń**: Obsługa Przycisku "ENTER": Po kliknięciu tego przycisku, kod przetwarza wprowadzony PIN i porównuje go z PIN-em przechowywanym w bazie danych. Jeśli PIN jest poprawny, użytkownik może przejść dalej, jeśli nie - może zostać wyświetlony komunikat o błędzie lub blokada.
 
-![Zdjęcie PinWindow](link_do_zdjecia_pin_window.jpg)
+ <br>![projekt](img/photo18.png)
 
 - **Powrót do Głównego Menu**: Przycisk "RETURN TO THE MAIN MENU" pozwala użytkownikowi anulować proces i wrócić do poprzedniego interfejsu.
 
@@ -335,11 +335,13 @@ Ogólnie: Dashboard jest zaprojektowany w taki sposób, aby umożliwić łatwą 
 
 - **Backend (Kod)**: W kodzie, klasa PinWindow jest odpowiedzialna za tworzenie i zarządzanie tym oknem. Używa ona metody checkPin do weryfikacji wprowadzonego PIN-u. System zlicza nieudane próby wprowadzenia PIN-u i może zablokować dostęp do konta na określony czas (lockoutEndTime), co zostało pokazane w jednym z komunikatów. W przypadku poprawnego wprowadzenia PIN-u, aplikacja prawdopodobnie przechodzi do kolejnego okna lub wykonuje kolejną akcję, która nie jest widoczna w przesłanym kodzie.
 
+ <br>![projekt](img/photo19.png)
+
 Ogólna Analiza: PinWindow jest kluczowym elementem aplikacji bankowej, który zapewnia bezpieczeństwo dostępu do konta użytkownika. Weryfikacja kodu PIN, obsługa błędów i blokada konta po nieudanych próbach to standardowe praktyki w aplikacjach wymagających autoryzacji. Interfejs jest prosty i bezpośredni, co minimalizuje ryzyko błędów ze strony użytkownika i zwiększa bezpieczeństwo.
 
 ### MenuWindow - Centrum Operacji Bankowych
 
-![Zdjęcie MenuWindow](link_do_zdjecia_menu_window.jpg)
+ <br>![projekt](img/photo20.png)
 
 - **Nagłówek "WELCOME TO YOUR ACCOUNT"**: Przywitanie użytkownika i potwierdzenie, że został pomyślnie zautoryzowany.
 
@@ -371,7 +373,7 @@ MenuWindow jest zaprojektowane, aby być przyjaznym dla użytkownika centrum zar
 
 ### BalanceWindow - Wyświetlanie Sald Konta
 
-![Zdjęcie BalanceWindow](link_do_zdjecia_balance_window.jpg)
+ <br>![projekt](img/photo21.png)
 
 - **Nagłówek "BALANCE"**: Wyraźnie informuje użytkownika, że znajduje się w sekcji dotyczącej salda konta.
 
@@ -395,7 +397,8 @@ BalanceWindow to proste i intuicyjne narzędzie, które umożliwia użytkownikom
 
 ### PaycheckWindow - Wypłata Środków
 
-![Zdjęcie PaycheckWindow](link_do_zdjecia_paycheck_window.jpg)
+  <br>![projekt](img/photo22.png)
+  <br>![projekt](img/photo23.png)
 
 - **Opis**: Okno to służy do wypłaty środków z konta użytkownika. Funkcjonalność ta jest widoczna w kodzie w klasie PaycheckWindow, gdzie użytkownik wpisuje kwotę, którą chce wypłacić, a następnie potwierdza operację przyciskiem "ENTER".
 
@@ -417,7 +420,7 @@ BalanceWindow to proste i intuicyjne narzędzie, które umożliwia użytkownikom
 
 ### PaymentWindow - Wpłata Środków
 
-![Zdjęcie PaymentWindow](link_do_zdjecia_payment_window.jpg)
+ <br>![projekt](img/photo24.png)
 
 - **Opis**: Okno „PaymentWindow” działa podobnie do PaycheckWindow, ale służy do wpłacania pieniędzy na konto użytkownika. Użytkownik wpisuje kwotę do wpłaty i potwierdza operację.
 
@@ -442,7 +445,7 @@ Oba okna dialogowe są zaprojektowane w sposób prosty i intuicyjny, co sprzyja 
 
 ### HistoryWindow - Historia Transakcji
 
-![Zdjęcie HistoryWindow](link_do_zdjecia_history_window.jpg)
+ <br>![projekt](img/photo25.png)
 
 - **Opis**: HistoryWindow jest oknem w aplikacji bankowej, które wyświetla historię transakcji przeprowadzonych przez użytkownika.
 

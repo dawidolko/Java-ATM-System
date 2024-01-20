@@ -11,12 +11,12 @@
 2. [Specyfikacja wymagań](#2-specyfikacja-wymagań)
 3. [Opis struktury projektu](#3-opis-struktury-projektu)
 4. [Harmonogram realizacji projektu (diagram Gantta)](#4-harmonogram-realizacji-projektu-diagram-gantta)
-5. [Prezentacja warstwy użytkowej projektu](#5)
+5. [Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
 6. [Podsumowanie](#6-podsumowanie)
 7. [Literatura](#7-literatura)
 
  
-## 1. Opis założeń projektu
+# 1. Opis założeń projektu
 
 W dzisiejszych czasach, gdy sektor bankowy ewoluuje z niespotykaną dotąd prędkością, napotykamy na wyzwania związane z adaptacją technologii i utrzymaniem wysokiej jakości obsługi klienta. Jednym z kluczowych elementów tego ekosystemu są bankomaty, stanowiące ważny punkt kontaktu z klientem. Niestety, wraz ze wzrostem złożoności operacji bankowych i rosnącymi oczekiwaniami klientów, bankomaty często stają się obiektem błędów operacyjnych, awarii, a nawet przestępczości. Te problemy, choć nie związane bezpośrednio z główną działalnością banku, mają istotny wpływ na wizerunek instytucji finansowej, satysfakcję klientów oraz efektywność operacyjną.
 

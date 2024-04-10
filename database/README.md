@@ -1,27 +1,35 @@
-## Baza danych do projektu
+## Database for the project
 
-### Wprowadzenie
-Folder to zawiera zestaw plików SQL niezbędnych do stworzenia bazy danych i tabel, które są podstawą mojego projektu. Pliki te zostały przygotowane do łatwego importu w środowisku PHPMyAdmin, działającym na lokalnym serwerze.
+### Introduction
 
-### Zawartość Repozytorium
-W repozytorium znajdziesz następujące pliki:
-- `karty.sql`: Skrypt do tworzenia bazy danych.
-- `stan_konta.sql`: Skrypt do tworzenia tabel w utworzonej bazie danych.
-- `tablehistory.sql`: Skrypt zawierający przykładowe dane do wstępnego zapełnienia tabel.
+This folder contains a set of SQL files necessary to create the database and tables that are the basis of my project. These files have been prepared for easy import in the PHPMyAdmin environment running on a local server.
 
-### Instrukcja Użycia
-Aby skorzystać z tych plików, wykonaj następujące kroki:
-1. Uruchom serwer lokalny z PHPMyAdmin.
-2. Zaloguj się do PHPMyAdmin.
-3. Utwórz nową bazę danych, używając skryptów.
-4. Użyj skryptu `karty.sql`, `stan_konta.sql`, `tablehistory.sql` do stworzenia struktury tabel.
+### Repository Contents
 
-### Wymagania
-- Serwer lokalny z PHPMyAdmin (np. XAMPP, WAMP).
-- Zainstalowany i skonfigurowany MySQL.
+In the repository you will find the following files:
 
-### Wsparcie
-Jeśli napotkasz problemy lub masz pytania dotyczące konfiguracji, śmiało twórz issue w tym repozytorium.
+- `karty.sql`: Script for creating a database.
+- `stan_konta.sql`: Script for creating tables in the created database.
+- `tablehistory.sql`: Script containing sample data to pre-populate tables.
 
-### Licencja
-Projekt udostępniony jest na licencji MIT. Szczegółowe informacje znajdziesz w pliku LICENSE.
+### Instructions for Use
+
+To use these files, follow these steps:
+
+1. Start your local server with PHPMyAdmin.
+2. Log in to PHPMyAdmin.
+3. Create a new database using scripts.
+4. Use the script `karty.sql`, `stan_konta.sql`, `tablehistory.sql` to create the table structure.
+
+### Requirements
+
+- Local server with PHPMyAdmin (e.g. XAMPP, WAMP).
+- MySQL installed and configured.
+
+### Support
+
+If you encounter problems or have questions about configuration, feel free to create an issue in this repository.
+
+### License
+
+The project is made available under the MIT license. For details, please refer to the LICENSE file.

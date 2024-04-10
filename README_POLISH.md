@@ -1,593 +1,584 @@
-![project](img/photo1.png)
+<br>![projekt](img/photo1.png)
 
-# Object-Oriented Programming Project Work
+# Praca projektowa programowanie obiektowe
 
-## ATM Operation Simulation System
+## System symulujący działanie Bankomatu
 
-### Supervisor: MSc. Eng. Ewa Żesławska
+### Prowadzący: mgr inż. Ewa Żesławska
 
-### Author: Dawid Olko | Student ID: 125148 | Field of study: Computer Science, lab group 3
+### Autor:Dawid Olko | nr albumu: 125148 |Kierunek: Informatyka, grupa lab 3
 
 ### Rzeszów 2024
 
-## Table of Contents
+## Spis treści
 
-1. [Project Assumptions Description](#1-project-assumptions-description)
-2. [Requirements Specification](#2-requirements-specification)
-3. [Project Structure Description](#3-project-structure-description)
-4. [Project Implementation Schedule (Gantt Chart)](#4-project-implementation-schedule-gantt-chart)
-5. [Presentation of the Project's User Interface Layer](#5-presentation-of-the-projects-user-interface-layer)
-6. [Summary](#6-summary)
-7. [Literature](#7-literature)
+1. [Opis założeń projektu](#1-opis-założeń-projektu)
+2. [Specyfikacja wymagań](#2-specyfikacja-wymagań)
+3. [Opis struktury projektu](#3-opis-struktury-projektu)
+4. [Harmonogram realizacji projektu (diagram Gantta)](#4-harmonogram-realizacji-projektu-diagram-gantta)
+5. [Prezentacja warstwy użytkowej projektu](#5-prezentacja-warstwy-użytkowej-projektu)
+6. [Podsumowanie](#6-podsumowanie)
+7. [Literatura](#7-literatura)
 
-# 1. Project Assumptions Description
 
-In today's era, as the banking sector evolves with unprecedented speed, we encounter challenges related to technology adaptation and maintaining high-quality customer service. One of the key elements of this ecosystem is ATMs, which constitute an important point of contact with the customer. Unfortunately, with the increase in banking operations' complexity and growing customer expectations, ATMs often become the object of operational errors, failures, and even criminal activity. These problems, although not directly related to the bank's main activity, significantly affect the financial institution's image, customer satisfaction, and operational efficiency.
 
-Developed **an innovative ATM operation simulation system**. This tool not only allows for precise modeling and analysis of various ATM operation scenarios but also serves as a training platform for employees. Thanks to this system, it is possible to detect and prevent potential problems, as well as optimize customer service processes.
+# 1. Opis założeń projektu
 
-The project **"ATM"** is a comprehensive GUI application aimed at simulating operations performed on a real ATM. It provides users with a graphical interface, through which they can verify identity using an electronic card and PIN number, and then perform basic banking operations. The application supports Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credit Bureau cards.
+W dzisiejszych czasach, gdy sektor bankowy ewoluuje z niespotykaną dotąd prędkością, napotykamy na wyzwania związane z adaptacją technologii i utrzymaniem wysokiej jakości obsługi klienta. Jednym z kluczowych elementów tego ekosystemu są bankomaty, stanowiące ważny punkt kontaktu z klientem. Niestety, wraz ze wzrostem złożoności operacji bankowych i rosnącymi oczekiwaniami klientów, bankomaty często stają się obiektem błędów operacyjnych, awarii, a nawet przestępczości. Te problemy, choć nie związane bezpośrednio z główną działalnością banku, mają istotny wpływ na wizerunek instytucji finansowej, satysfakcję klientów oraz efektywność operacyjną.
 
-The application is built on **Java Swing** in the **IntelliJ IDEA** environment and uses **MySQL** as a relational database management system, allowing for structured and secure data storage and management. Specifically, the database consists of three main relational tables:
+Opracowany **innowacyjny system symulacji pracy bankomatu**. Jest to narzędzie, które nie tylko pozwala na dokładne modelowanie i analizę różnorodnych scenariuszy działania bankomatów, ale także służy jako platforma szkoleniowa dla pracowników. Dzięki temu systemowi możliwe jest wykrywanie i zapobieganie potencjalnym problemom, a także optymalizacja procesów obsługi klienta.
 
-- `account_status`: stores information about account status, including the balance of each card.
-- `cards`: contains information about available electronic cards and their assigned PIN numbers.
-- `tablehistory`: records the transaction history, including the type of operation, amount, and transaction date.
+Projekt **"Bankomat"** to kompleksowa aplikacja GUI, której celem jest symulacja operacji wykonywanych na rzeczywistym bankomacie. Zapewnia użytkownikom interfejs graficzny, za pośrednictwem którego mogą weryfikować tożsamość za pomocą karty elektronicznej i numeru PIN, a następnie przeprowadzać podstawowe operacje bankowe. Aplikacja obsługuje karty Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credit Bureau.
 
-Each user interaction is verified by the system by checking the entered PIN numbers against those stored in the `cards` table. Upon successful authorization, the user has access to ATM functions such as checking the balance, cash withdrawal and deposit, and viewing transaction history.
+Aplikacja jest zbudowana w oparciu o **Java Swing** w środowisku **IntelliJ IDEA** i wykorzystuje **MySQL** jako system zarządzania relacyjną bazą danych, co umożliwia przechowywanie i zarządzanie danymi w sposób strukturalny i bezpieczny. W szczególności, baza danych składa się z trzech głównych tabel relacyjnych:
 
-Additionally, the application offers unique features to improve user experience:
+- `stan_konta`: przechowuje informacje o stanie konta, w tym saldo każdej karty.
+- `karty`: zawiera informacje o dostępnych kartach elektronicznych oraz przypisane do nich numery PIN.
+- `tablehistory`: rejestruje historię transakcji, w tym typ operacji, kwotę oraz datę transakcji.
 
-- The ability to adjust the background music volume, which is a rarity in traditional ATMs, but significantly enhances the comfort of using the application.
-- Functionality for exporting and importing database data, allowing for easy transfer of the application's state between different environments or quick system restoration to a previous state.
+Każda interakcja z użytkownikiem jest weryfikowana przez system sprawdzając zgodność wprowadzonych numerów PIN z tymi przechowywanymi w tabeli `karty`. Po pomyślnej autoryzacji użytkownik ma dostęp do funkcji bankomatu takich jak sprawdzenie salda, wypłata i wpłata gotówki oraz przegląd historii transakcji.
 
-Each of these features is implemented with maximum convenience and intuitiveness in mind, supported by a clear and responsive user interface created using Java Swing. The "ATM" project is not only a demonstration of programming skills but also an attempt at innovation in the interaction between humans and automated banking systems.
+Dodatkowo, aplikacja oferuje unikalne funkcje dla poprawy doświadczenia użytkownika:
 
-### Project Goals and Assumptions
+- Możliwość regulacji poziomu głośności tła muzycznego, co jest rzadkością w tradycyjnych bankomatach, jednak znacząco podnosi komfort użytkowania aplikacji.
+- Funkcjonalność eksportu i importu danych bazy danych, co umożliwia łatwe przenoszenie stanu aplikacji między różnymi środowiskami lub szybkie przywracanie systemu do stanu poprzedniego.
 
-1. **Project goal**: Design an ATM operation simulation system intended not only for educating and training bank employees but also for testing and optimizing the actual operation of ATMs.
-2. **Problem and its source**: The problem related to the limited access to practical training in ATM operation will be addressed. The primary source of the problem is the lack of appropriate simulation tools that safely replicate the realities of these devices' work.
-3. **Importance of the problem and evidence**: The lack of practical training tools leads to an increase in the risk of operational errors and fraud, as confirmed by reports on ATM handling errors by newly hired personnel.
-4. **What is necessary to solve the problem**: It is necessary to create an interactive application simulating ATM work, which will enable practical training of employees and testing of new functions without financial risk.
-5. **How the problem will be solved**: The problem will be solved through the phased development of software, starting from the design of the user interface and ending with integration with real banking systems. The result will be an application allowing for the simulation of various ATM usage scenarios.
-6. **Assumptions for the project**: The project assumes that the application will be flexible and scalable, allowing for continuous addition of new functionalities and easy adaptations to the changing requirements of digital banking.
+Każda z tych funkcji jest zaimplementowana z myślą o maksymalnej wygodzie i intuicyjności obsługi, co jest wspierane przez przejrzysty i responsywny interfejs użytkownika stworzony przy użyciu Java Swing. Projekt "Bankomat" jest nie tylko demonstracją umiejętności programistycznych, ale także próbą innowacji w zakresie interakcji człowieka z automatyzowanymi systemami bankowymi.
 
-## 2. Requirements Specification
+### Cele i założenia projektu
 
-### 2.1. Functional Requirements
+1. **Cel projektu**: Zaprojektowano system symulacji pracy bankomatu, który ma na celu nie tylko edukację i trening pracowników banków, ale również testowanie i optymalizację rzeczywistego działania bankomatów.
+2. **Problem i jego źródło**: Rozwiązany zostanie problem związany z ograniczonym dostępem do praktycznego szkolenia z zakresu obsługi bankomatów. Podstawowym źródłem problemu jest brak odpowiednich narzędzi symulacyjnych, które w bezpiecznym środowisku oddają realia pracy tych urządzeń.
+3. **Ważność problemu i dowody**: Brak praktycznych narzędzi szkoleniowych prowadzi do zwiększenia ryzyka błędów operacyjnych i oszustw, co potwierdzają raporty dotyczące błędów obsługi bankomatów przez nowo zatrudniony personel.
+4. **Co jest niezbędne do rozwiązania problemu**: Niezbędne jest stworzenie interaktywnej aplikacji symulującej pracę bankomatu, która umożliwi praktyczne szkolenie pracowników oraz testowanie nowych funkcji bez ryzyka finansowego.
+5. **Sposób rozwiązania problemu**: Problem zostanie rozwiązany poprzez etapowy rozwój oprogramowania, rozpoczynając od projektu interfejsu użytkownika, a kończąc na integracji z rzeczywistymi systemami bankowymi. Wynikiem prac będzie aplikacja pozwalająca na symulację różnych scenariuszy użytkowania bankomatu.
+6. **Założenia do projektu**: W projekcie założono, że aplikacja będzie elastyczna i skalowalna, umożliwiająca ciągłe dodawanie nowych funkcjonalności oraz łatwe adaptacje do zmieniających się wymagań bankowości cyfrowej.
 
-- **User Authentication:**
+## 2. Specyfikacja wymagań
 
-  - Verification of the cardholder based on the PIN number stored in the database.
-  - Card lockout after three unsuccessful PIN entry attempts.
+### 2.1. Wymagania funkcjonalne
 
-- **Support for Different Types of Cards:**
+- **Autentykacja Użytkownika:**
 
-  - Acceptance of various types of bank cards, including Visa, Mastercard, American Express, Visa Electron, Diners Club, and Japan Credit Bureau.
-  - Dynamic recognition of card type based on user-entered data.
+  - Weryfikacja posiadacza karty na podstawie numeru PIN zapisanego w bazie danych.
+  - Blokada karty po trzech nieudanych próbach wprowadzenia PIN.
 
-- **Account Operations:**
+- **Obsługa różnych typów kart:**
 
-  - Checking the account balance using information from the `account_status` table.
-  - Cash withdrawal with balance update in the database.
-  - Cash deposit with balance update in the database.
-  - Displaying transaction history, using data from the `tablehistory` table.
+  - Akceptacja wielu typów kart bankowych, w tym Visa, Mastercard, American Express, Visa Electron, Diners Club i Japan Credit Bureau.
+  - Dynamiczne rozpoznawanie typu karty na podstawie danych wprowadzonych przez użytkownika.
 
-- **Data Management:**
+- **Operacje na koncie:**
 
-  - Exporting data from the database to a file, allowing for easy restoration and data transfer.
-  - Importing data into the database from a file, facilitating application state restoration.
+  - Sprawdzenie salda konta z wykorzystaniem informacji z tabeli `stan_konta`.
+  - Wypłata gotówki z aktualizacją salda w bazie danych.
+  - Wpłata gotówki z aktualizacją salda w bazie danych.
+  - Wyświetlanie historii transakcji, korzystając z danych z tabeli `tablehistory`.
 
-- **Security:**
+- **Zarządzanie danymi:**
 
-  - Encryption of sensitive data during transmission between the application and the database.
-  - Mechanisms to prevent attacks, employing `passwordField` to conceal the PIN.
+  - Eksport danych z bazy do pliku, co umożliwia łatwe przywracanie i przenoszenie danych.
+  - Import danych do bazy z pliku, co pozwala na przywracanie stanu aplikacji.
 
-- **User Authentication:**
+- **Bezpieczeństwo:**
 
-  - The system must enable user authorization using a bank card and PIN code.
+  - Szyfrowanie danych wrażliwych podczas transmisji między aplikacją a bazą danych.
+  - Mechanizmy zapobiegające atakom, z zastosowaniem `passwordField` dla ukrycia PIN.
 
-- **Financial Transactions:**
+- **Uwierzytelnianie Użytkownika:**
 
-  - The ATM should support basic banking operations such as cash withdrawal, balance checking, cash deposit, and recording transaction confirmation in the database.
+  - System musi umożliwić autoryzację użytkownika za pomocą karty bankowej i kodu PIN.
 
-- **Security and Audit:**
+- **Transakcje Finansowe:**
 
-  - There should be the ability to track all operations on the ATM and ensure compliance with security requirements.
+  - Bankomat powinien obsługiwać podstawowe operacje bankowe, takie jak wypłata gotówki, sprawdzanie salda, wpłata gotówki oraz zapisywanie potwierdzenia transakcji w bazie.
 
-- **User Interface:**
-  - Displaying error messages and operation confirmations.
-  - Navigation between application screens using buttons and menus.
+- **Bezpieczeństwo i Audyt:**
 
-### 2.2. Non-Functional Requirements
+  - Powinna być możliwość śledzenia wszystkich operacji na bankomacie oraz zapewnienie zgodności z wymogami bezpieczeństwa.
 
-- **Performance:**
+- **Interfejs użytkownika:**
+  - Wyświetlanie komunikatów o błędach i potwierdzeniach operacji.
+  - Nawigacja między ekranami aplikacji za pomocą przycisków i menu.
 
-  - Quick and efficient response to user queries without long waiting times.
-  - Optimization of database queries to ensure smooth operation.
+### 2.2. Wymagania niefunkcjonalne
 
-- **Usability:**
+- **Wydajność:**
 
-  - An intuitive user interface that is easy to navigate even for those unfamiliar with technology.
-  - Clear and aesthetically pleasing presentation of information.
+  - Szybka i efektywna odpowiedź na zapytania użytkownika bez długich oczekiwań.
+  - Optymalizacja zapytań do bazy danych dla zapewnienia płynności działania.
 
-- **Scalability:**
+- **Użyteczność:**
 
-  - Ease of adding new features and handling a larger number of users without performance degradation.
+  - Intuicyjny interfejs użytkownika, który jest łatwy w nawigacji nawet dla osób niezaznajomionych z technologią.
+  - Czytelna i estetyczna prezentacja informacji.
 
-- **Availability:**
+- **Skalowalność:**
 
-  - The application must be error-free on supported operating systems.
-  - Recovery mechanisms to minimize downtime.
+  - Łatwość w dodawaniu nowych funkcji i obsługi większej liczby użytkowników bez degradacji wydajności.
 
-- **Modularity:**
+- **Dostępność:**
 
-  - Application structure divided into modules, facilitating code management and changes.
+  - Aplikacja musi być dostępna bez błędów na wspieranych systemach operacyjnych.
+  - Mechanizmy odzyskiwania po awarii w celu minimalizacji przestojów.
 
-- **Continuous Availability:**
+- **Modułowość:**
 
-  - The ATM should be available 24/7/365, with minimal downtime.
+  - Struktura aplikacji podzielona na moduły, co ułatwia zarządzanie kodem i wprowadzanie zmian.
 
-- **Security:**
+- **Nieprzerwana Dostępność:**
 
-  - Must include advanced encryption mechanisms and two-factor authentication to ensure the security of transactions.
+  - Bankomat powinien być dostępny 24/7/365, z minimalnym czasem przestoju.
 
-- **Testability:**
-  - The ability to conduct a full range of tests (unit, integration, system, acceptance) to ensure quality and reliability.
+- **Bezpieczeństwo:**
 
-# 3. Project Structure Description
+  - Musi zawierać zaawansowane mechanizmy szyfrowania i autoryzacji dwuskładnikowej, aby zapewnić bezpieczeństwo transakcji.
 
-## 3.1. Language and Tools Used
+- **Testowalność:**
+  - Możliwość przeprowadzenia pełnej gamy testów (jednostkowych, integracyjnych, systemowych, akceptacyjnych) w celu zapewnienia jakości i niezawodności.
 
-- **Java JDK**: Recommended version: Java Development Kit (JDK) 17 – This is the latest Long-Term Support (LTS) version, offering stability and a wide range of features, including security and performance enhancements.
 
-- **Development Environment**: IntelliJ IDEA Latest stable version: IntelliJ IDEA 2022.1 – Features performance improvements, better support for the latest versions of Java, as well as advanced code analysis and refactoring tools.
 
-- **GUI Toolkit**: Swing The version of Swing used in the project is integrated with JDK, so using the same version of JDK for compatibility is recommended.
+# 3. Opis struktury projektu
 
-- **Database**: MySQL Recommended version: MySQL 8.0 – Offers improved security mechanisms, performance, and support for new SQL features.
+## 3.1. Wykorzystywany język i narzędzia
 
-- **MySQL Connector/J**: Recommended version: MySQL Connector/J 8.0.28 – This is a compatible JDBC driver for MySQL version 8.0, providing high-performance database connections.
+- **Java JDK**: Zalecana wersja: Java Development Kit (JDK) 17 – Jest to najnowsza długoterminowa wersja wsparcia (LTS), która zapewnia stabilność i szeroki zakres funkcji, w tym poprawki bezpieczeństwa i wydajności.
 
-- **Development Environment**: IntelliJ IDEA
+- **Środowisko programistyczne**: IntelliJ IDEA Najnowsza stabilna wersja: IntelliJ IDEA 2022.1 – Zawiera ulepszenia wydajności, lepsze wsparcie dla najnowszych wersji Javy, jak również zaawansowane narzędzia do analizy kodu i faktoryzacji.
 
-## 3.2. Programming Language
+- **GUI Toolkit**: Swing Użyta w projekcie wersja Swing jest zintegrowana z JDK, dlatego zaleca się użycie tej samej wersji JDK dla kompatybilności.
 
-Java is a high-level programming language characterized by strong typing, object orientation, and code portability across different platforms. It is the language of choice for many business and corporate applications due to its stability, maturity, and broad community support. In the "ATM" project, Java is used to create the application's business logic, handle user interface events, and communicate with the database.
+- **Baza danych**: MySQL Zalecana wersja: MySQL 8.0 – Oferuje ulepszone mechanizmy bezpieczeństwa, wydajności i wsparcie dla nowych funkcji SQL.
 
-## 3.3. GUI Libraries
+- **MySQL Connector/J**: Zalecana wersja: MySQL Connector/J 8.0.28 – Jest to zgodny sterownik JDBC dla wersji MySQL 8.0, który zapewnia wysoką wydajność połączeń z bazą danych.
 
-Swing is a library for creating a graphical user interface (GUI) for Java applications. It offers a rich set of components, such as windows, buttons, text fields, drop-down lists, and others, which can be easily customized and styled. Swing is used in the project to create a responsive and intuitive interface that enables users to interact easily and seamlessly with the ATM's functions.
+- **Środowisko deweloperskie**: IntelliJ IDEA
 
-## 3.4. Database Communication Method
+## 3.2. Język programowania
 
-MySQL Connector/J is a JDBC driver that enables Java applications to communicate with the MySQL database. It serves as a bridge between the application logic and the database, allowing for the execution of
+Java to język programowania wysokiego poziomu, który charakteryzuje się silnym typowaniem, obiektowością i przenośnością kodu między różnymi platformami. Jest to język wyboru dla wielu aplikacji biznesowych i korporacyjnych ze względu na jego stabilność, dojrzałość i szerokie wsparcie społeczności. W projekcie „Bankomat” Java jest używana do tworzenia logiki biznesowej aplikacji, obsługi zdarzeń interfejsu użytkownika oraz komunikacji z bazą danych.
 
-SQL queries, updating data, and receiving results. In the project, it is used to manage banking transactions, authenticate users, and store operation history. Using MySQL Connector/J ensures efficient and secure data management, which is crucial for banking operations.
+## 3.3. Biblioteki GUI
 
-## 3.5. Related Tools
+Swing to biblioteka do tworzenia graficznego interfejsu użytkownika (GUI) dla aplikacji Java. Oferuje bogaty zestaw komponentów, takich jak okna, przyciski, pola tekstowe, listy rozwijane i inne, które można łatwo dostosować i stylizować. Swing jest używany w projekcie do stworzenia responsywnego i intuicyjnego interfejsu, który umożliwia użytkownikom łatwą i bezproblemową interakcję z funkcjami bankomatu.
 
-Each of these technical elements was chosen to ensure the reliability, performance, and security of the "ATM" application. Java, in combination with the IntelliJ IDEA IDE, offers a robust development platform, while Swing and MySQL Connector/J provide the necessary tools to create a functional and secure banking system.
+## 3.4. Sposób komunikacji z bazą danych
 
-## 3.6. Class Diagram
+MySQL Connector/J to sterownik JDBC, który umożliwia aplikacjom Java komunikację z bazą danych MySQL. Jest to most między logiką aplikacji a bazą danych, pozwalający na wykonywanie zapytań SQL, aktualizowanie danych i odbieranie wyników. W projekcie jest wykorzystany do zarządzania transakcjami bankowymi, autentykacji użytkowników i przechowywania historii operacji. Użycie MySQL Connector/J zapewnia wydajne i bezpieczne zarządzanie danymi, co jest kluczowe dla operacji bankowych.
 
-![project](img/photo2.png)
-![project](img/photo3.png)
+## 3.5. Powiązane narzędzia
 
-The structures presented in the diagrams relate to the software architecture of the ATM simulation. They include classes and windows representing different aspects of the system:
+Każdy z tych elementów technicznych został wybrany w celu zapewnienia niezawodności, wydajności i bezpieczeństwa aplikacji "Bankomat". Język Java w połączeniu z IDE IntelliJ IDEA oferuje solidną platformę programistyczną, a Swing i MySQL Connector/J dostarczają niezbędnych narzędzi do stworzenia funkcjonalnego i bezpiecznego systemu bankowego.
 
-1. **Main**: The main class initiating the application's operation.
-2. **DatabaseConnector**: Responsible for connecting to the database.
-3. **CardItem**: Represents a bank card with its basic attributes.
-4. **MainRandomPassword**: Could be a class generating random passwords or PINs.
-5. **Dashboard**: The user interface presenting the main functions of the ATM.
-6. **MenuWindow**: The menu window offering various user options.
-7. **PinWindow**: The interface for the user to enter the PIN.
-8. **BalanceWindow**: The window displaying the user's account balance.
-9. **PaymentWindows**: The window for making payments.
-10. **PaycheckWindow**: The window for managing checks and withdrawals.
-11. **HistoryWindow**: The window displaying transaction history.
-12. **MyTableModel**: Could be a class adapting data for display in tables.
+## 3.6. Diagram klas
 
-Each class and window contain methods and attributes responsible for specific behavior or data presentation in the application. For example, in the "PaymentWindows" class, there are methods for managing payments, like "depositMoney()" and "updateBalance()", whereas "HistoryWindow" manages displaying transaction history using methods such as "loadTransactionHistory()". The diagram indicates a modular and object-oriented structure of the system, where each component is responsible for a distinct set of functionalities.
+<br>![projekt](img/photo2.png)
+<br>![projekt](img/photo3.png)
 
-# 4. Project Implementation Schedule (Gantt Chart)
+Struktury przedstawione na diagramach odnoszą się do architektury oprogramowania symulacji bankomatu. Zawierają one klasy i okna reprezentujące różne aspekty systemu:
 
-Below is the project implementation schedule.
+1. **Main**: Główna klasa inicjująca działanie aplikacji.
+2. **DatabaseConnector**: Odpowiada za połączenie z bazą danych.
+3. **CardItem**: Reprezentuje kartę bankową z jej podstawowymi atrybutami.
+4. **MainRandomPassword**: Może być klasą generującą losowe hasła lub PINy.
+5. **Dashboard**: Interfejs użytkownika prezentujący główne funkcje bankomatu.
+6. **MenuWindow**: Okno menu oferujące różne opcje użytkownika.
+7. **PinWindow**: Interfejs dla użytkownika do wprowadzania PINu.
+8. **BalanceWindow**: Okno wyświetlające saldo dostępne na koncie użytkownika.
+9. **PaymentWindows**: Okno umożliwiające realizację płatności.
+10. **PaycheckWindow**: Okno do zarządzania czekami i wypłatami.
+11. **HistoryWindow**: Okno wyświetlające historię transakcji.
+12. **MyTableModel**: Może być klasą dostosowującą dane do wyświetlenia w tabelach.
 
-![project](img/photo4.png)
-![project](img/photo5.png)
+Każda klasa i okno zawierają metody i atrybuty odpowiadające za specyficzne zachowanie lub prezentację danych w aplikacji. Na przykład, w klasie „PaymentWindows” znajdują się metody do zarządzania płatnościami, jak „depositMoney()” czy „updateBalance()”, natomiast „HistoryWindow” zarządza wyświetlaniem historii transakcji z użyciem metod takich jak „loadTransactionHistory()”. Diagram wskazuje na modularną i obiektową budowę systemu, gdzie każdy komponent jest odpowiedzialny za odizolowany zestaw funkcjonalności.
 
-Both Gantt charts show the project implementation schedule, marking key work stages and their start and end dates. The first diagram indicates processes such as preparing documentation, debugging, implementing data export to CSV file, and preparing the initial draft of the application. The second diagram shows the work plan for individual days of the month and clearly divides activities into successive stages.
+# 4. Harmonogram realizacji projektu (diagram Gantta)
 
-Challenges and problems arose in handling exceptions and data validation, where increased time allocation for these activities is visible. This required particular attention to details and testing to ensure the application's correct operation. Moreover, a significant part of the project involved preparing documentation, suggesting that considerable emphasis was placed on accurately describing the system's specifications and functionalities.
+Poniżej zamieszono harmonogram realizacji projektu.
 
-The project was carried out using the Git version control system, all project source files are located at: [https://github.com/dawidolko/java-ATM-system.git](https://github.com/dawidolko/java-ATM-system.git) and will be available until 01.31.2025.
+<br>![projekt](img/photo4.png)
+<br>![projekt](img/photo5.png)
 
-![project](img/photo6.png)
+Obydwa diagramy Gantta przedstawiają harmonogram realizacji projektu, zaznaczając kluczowe etapy prac oraz ich daty rozpoczęcia i zakończenia. Pierwszy diagram wskazuje na procesy takie jak przygotowanie dokumentacji, usuwanie błędów, implementację eksportu danych do pliku CSV, a także przygotowanie wstępnego szkicu aplikacji. Drugi diagram pokazuje plan prac na poszczególne dni miesiąca i wyraźnie dzieli działania na kolejne etapy.
 
-# 5. Presentation of the Project's User Interface Layer
+Trudności i problemy pojawiły się w przypadku obsługi wyjątków i walidacji danych, gdzie widać zwiększoną alokację czasu na te działania. Wymagało to szczególnego skupienia na szczegółach i testowaniu, aby zapewnić poprawność działania aplikacji. Ponadto, istotną część projektu stanowiło przygotowanie dokumentacji, co sugeruje, że duży nacisk kładziono na dokładne opisanie specyfikacji i funkcjonalności systemu.
 
-The "ATM" program operates once all classes are connected with the tables from the database, which we connect using SQL and JDBC through SQL-Connector-j-8.2.0.jar. To do this, we need to download the JAR file from the [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/) page. Let's choose the platform according to the drawing below.
+Projekt realizowany był z wykorzystaniem systemu kontroli wersji Git, wszystkie pliki źródłowe projektu znajdują się pod adresem: [https://github.com/dawidolko/java-ATM-system.git](https://github.com/dawidolko/java-ATM-system.git) i będą dostępne do 31.01.2025.
 
-![project](img/photo7.png)
+<br>![projekt](img/photo6.png)
 
-Once downloaded, it must be uploaded to the IntelliJ IDEA project. After completing this step, let's go to the project settings by clicking FILE -> Project Structure, and then proceed according to the picture below.
+# 5. Prezentacja warstwy użytkowej projektu
 
-![project](img/photo8.png)
+Program „Bankomat” działa po połączeniu się wszystkich klas z tabelami z bazy, którą łączymy przy pomocy SQL i JDBC za pomocą SQL-Connecor-j-8.2.0.jar. Aby to uczynić, musimy pobrać plik JAR ze strony [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/). Wybierzmy platformę zgodnie z poniższym rysunkiem.
 
-Then, transfer the downloaded file to the project folder, as shown in the picture below.
+<br>![projekt](img/photo7.png)
 
-![project](img/photo9.png)
+Gdy już został pobrany, trzeba go wgrać do projektu w IntelliJ IDEA. Po wykonaniu tego kroku, przejdźmy do ustawień projektu, klikając FILE -> Project Structure, a następnie postępujmy zgodnie z poniższym zdjęciem.
 
-Once this has been done, we create a database using xampp, which can be downloaded from the Internet at this link [https://www.apachefriends.org/pl/index.html](https://www.apachefriends.org/pl/index.html). After installing and launching xampp, let's activate the Apache and MySQL modules, as shown in the picture below.
+<br>![projekt](img/photo8.png)
 
-![project](img/photo10.png)
+Następnie pobrany plik przerzućmy do folderu projektu, jak to pokazano na poniższym zdjęciu.
 
-After connecting and launching the Apache and MySQL ports, let's connect to the browser at the address: [http://localhost/phpmyadmin](http://localhost/phpmyadmin), which will automatically transfer us to our local server. There, by clicking the "New" tab, we create a new database named "atm", which is important because the program will not connect to a database with
+<br>![projekt](img/photo9.png)
 
-a different name, resulting in an error. After creating the "atm" database, go to the "SQL" tab and add 3 queries creating tables with values. We can adjust the values according to preferences, but remember that the columns must have exactly the same names as stated below, as the "ATM" program will use these names.
+Gdy już to zostało wykonane, tworzymy bazę danych za pomocą xampp, którego można pobrać z Internetu pod tym linkiem [https://www.apachefriends.org/pl/index.html](https://www.apachefriends.org/pl/index.html). Po zainstalowaniu i uruchomieniu xampp, aktywujmy moduły Apache i MySQL, jak to przedstawia poniższe zdjęcie.
 
-![project](img/photo11.png)
+<br>![projekt](img/photo10.png)
 
-### "ATM" Program
+Po połączeniu i uruchomieniu portów Apache i MySQL, przejdźmy do połączenia się z przeglądarki z adresem: [http://localhost/phpmyadmin](http://localhost/phpmyadmin), który automatycznie przeniesie nas do naszego serwera lokalnego. Tam, klikając zakładkę „New”, tworzymy nową bazę danych o nazwie „atm”, co jest ważne, ponieważ program nie połączy się z bazą danych o innej nazwie, co skutkuje błędem. Po utworzeniu bazy „atm” przejdźmy do zakładki „SQL” i dodajmy 3 zapytania tworzące tabele z wartościami. Możemy dostosować wartości według preferencji, ale pamiętajmy, aby kolumny miały dokładnie takie same nazwy, jakie podano poniżej, ponieważ program „Bankomat” będzie korzystał z tych nazw.
 
-Once these contents have been added to the database, you can start working with the "ATM" program. Starting with the class that will connect all classes using our previously created database, the class responsible for this is "DatabaseConnector". The "DatabaseConnector" class serves as a central point for establishing a connection with the database. It is an exemplary design pattern used in Java applications to isolate database connection details from the rest of the application.
+<br>![projekt](img/photo11.png)
 
-#### Description of the DatabaseConnector Class's Operation
+### Program "Bankomat"
 
-The class defines three constants - `DATABASE_URL`, `DATABASE_USER`, and `DATABASE_PASSWORD`. These constants store the information necessary to connect to the database, including the URL (database address), username, and password. In this class, they are set to specific values that indicate a local MySQL database (`jdbc:mysql://localhost:3306/atm`).
+Gdy już zostały dodane te zawartości do bazy, można zacząć pracę z programem „Bankomat”. Zaczynając od klasy, która połączy nam wszystkie klasy za pomocą naszej wyżej stworzonej bazy, klasa, która za to odpowiada to „DatabaseConnector”. Klasa „DatabaseConnector” służy jako centralny punkt do nawiązywania połączenia z bazą danych. Jest to przykładowy wzorzec projektowy używany w aplikacjach Java do izolowania szczegółów połączenia z bazą danych od reszty aplikacji.
 
-#### The connect() Method
+#### Opis działania klasy DatabaseConnector
 
-`connect()` is the main method in the "DatabaseConnector" class, used to establish a connection with the database. Here's what happens during its invocation:
+Klasa definiuje trzy stałe - `DATABASE_URL`, `DATABASE_USER`, i `DATABASE_PASSWORD`. Te stałe przechowują informacje niezbędne do połączenia z bazą danych, w tym URL (adres bazy danych), nazwę użytkownika oraz hasło. W przypadku tej klasy, są one ustawione na konkretne wartości, które wskazują na lokalną bazę danych MySQL (`jdbc:mysql://localhost:3306/atm`).
 
-- Loading the Driver: Java requires loading the appropriate database driver before establishing a connection. In newer versions of JDBC, the driver loads automatically, so this step can often be skipped.
+#### Metoda connect()
 
-- Establishing a Connection: The method `DriverManager.getConnection()` is used with previously defined constants `DATABASE_URL`, `DATABASE_USER`, and `DATABASE_PASSWORD` to create and return a Connection object. This Connection object is later used by other parts of the application to send SQL queries and manage transactions with the database.
+`connect()` to główna metoda w klasie „DatabaseConnector”, służąca do nawiązywania połączenia z bazą danych. Oto co się dzieje podczas jej wywołania:
 
-- Exception Handling: In case of connection issues (e.g., incorrect login details, the database not running, etc.), the method throws a `RuntimeException` with an appropriate error message. This allows the calling code to handle the connection problem appropriately.
+- Ładowanie Sterownika: Java wymaga załadowania odpowiedniego sterownika bazy danych przed nawiązaniem połączenia. W przypadku nowszych wersji JDBC, sterownik ładuje się automatycznie, więc ten krok często można pominąć.
 
-#### Usage
+- Nawiązywanie Połączenia: Metoda `DriverManager.getConnection()` jest używana z wcześniej zdefiniowanymi stałymi `DATABASE_URL`, `DATABASE_USER`, i `DATABASE_PASSWORD` do stworzenia i zwrócenia obiektu Connection. Ten obiekt Connection jest później wykorzystywany przez inne części aplikacji do wysyłania zapytań SQL i zarządzania transakcjami z bazą danych.
 
-The "DatabaseConnector" class is typically used throughout the application to obtain a connection with the database. For example, other classes that need to execute an SQL query can first call `DatabaseConnector.connect()` to obtain a Connection object, and then use this object to execute the query.
+- Obsługa Wyjątków: W przypadku problemów z połączeniem (np. błędne dane logowania, baza danych nie działa, itp.), metoda rzuca wyjątek `RuntimeException` z odpowiednią wiadomością o błędzie. To pozwala wywołującemu kodowi na obsłużenie problemu połączenia w odpowiedni sposób.
 
-#### Summary
+#### Wykorzystanie
 
-"DatabaseConnector" is an essential part of the application, allowing for abstraction and centralization of database connection management. By isolating connection details and the way to obtain a connection, this class provides flexibility (ease of changing databases, connection parameters, etc.) and code cleanliness, reducing code repetition and centralizing database handling in one place.
+Klasa „DatabaseConnector” jest typowo używana w całej aplikacji do uzyskiwania połączenia z bazą danych. Na przykład, inne klasy, które potrzebują wykonać zapytanie SQL, mogą najpierw wywołać `DatabaseConnector.connect()` do uzyskania obiektu Connection, a następnie użyć tego obiektu do wykonania zapytania.
 
-### The Main Class "Main"
+#### Podsumowanie
 
-The "Main" class serves as the main entry point to the application. It uses the connection with the database through the "DatabaseConnector" class to retrieve information about cards (id, type, PIN) from the cards table. This is done in a try-with-resources block, which ensures automatic closure of resources after the operation is completed. After retrieving the data, the application displays the working directory path and launches the user interface Dashboard, which is likely a control panel or management screen.
+„DatabaseConnector” jest istotnym elementem aplikacji, umożliwiającym abstrakcję i centralizację zarządzania połączeniem z bazą danych. Dzięki izolowaniu detali połączenia i sposobu uzyskiwania połączenia, klasa ta zapewnia elastyczność (łatwość zmiany baz danych, parametrów połączenia itp.) oraz czystość kodu, zmniejszając powtarzalność kodu i skupiając obsługę bazy danych w jednym miejscu.
 
-This class primarily focuses on two aspects:
+### Główna klasa "Main"
 
-- Connecting to the database and retrieving data: It uses SQL queries to retrieve data from the cards table in the database and processes these data in the context of the application.
+Klasa „Main„ pełni funkcję głównego punktu wejścia do aplikacji. Wykorzystuje ona połączenie z bazą danych za pomocą klasy `DatabaseConnector`, aby pobrać informacje o kartach (id, typ, PIN) z tabeli karty. Dzieje się to w bloku try-with-resources, co zapewnia automatyczne zamknięcie zasobów po zakończeniu operacji. Po pobraniu danych, aplikacja wyświetla ścieżkę katalogu roboczego i uruchamia interfejs użytkownika Dashboard, który jest prawdopodobnie panelem zarządzania czy kontrolnym.
 
-- Launching the user interface: After retrieving the data and handling database operations, the program initiates and displays the user interface (Dashboard), which serves as the main application window.
+Klasa ta skupia się głównie na dwóch aspektach:
 
-### The Class "MainRandomPassword"
+- Połączenie z bazą danych i pobranie danych: Wykorzystuje zapytania SQL do pobrania danych z tabeli karty w bazie danych i przetwarza te dane w kontekście aplikacji.
 
-"MainRandomPassword" is an alternative version of the Main class that generates random PIN numbers for different types of cards and updates them in the database. This can be useful for resetting or initializing PIN data in the system. Here are the key aspects of this class's operation:
+- Uruchomienie interfejsu użytkownika: Po pobraniu danych i obsłudze bazy danych, program inicjuje i wyświetla interfejs użytkownika (Dashboard), który służy jako główne okno aplikacji.
 
-#### Connecting to the Database
+### Klasa "MainRandomPassword"
 
-Like Main, it connects to the database using `DatabaseConnector`.
+„MainRandomPassword” jest alternatywną wersją klasy Main, która generuje losowe numery PIN dla różnych typów kart i aktualizuje je w bazie danych. To może być użyteczne do resetowania lub inicjalizacji danych PIN w systemie. Oto kluczowe aspekty działania tej klasy:
 
-#### Generating Random PINs
+#### Połączenie z bazą danych
 
-It uses the `Random` class to generate random PIN numbers for defined types of cards.
+Podobnie jak Main, łączy się z bazą danych za pomocą `DatabaseConnector`.
 
-#### Updating the Database
+#### Generowanie losowych PIN-ów
 
-For each type of card, the class updates the PIN number in the database using the randomly generated numbers. The function "updateCardPin" is responsible for updating the PIN in the database.
+Używa klasy `Random` do wygenerowania losowych numerów PIN dla zdefiniowanych typów kart.
 
-#### Differences Between Main and MainRandomPassword
+#### Aktualizacja bazy danych
 
-While Main is used for retrieving data from the database and launching the UI, MainRandomPassword has a specific application in generating and updating random PIN numbers for cards. It can be assumed that MainRandomPassword is an administrative tool or part of the system initialization process, where it is necessary to ensure that all cards have set PINs, perhaps before the system is launched or as part of regular security procedures.
+Dla każdego typu karty, klasa aktualizuje numer PIN w bazie danych, używając wygenerowanych losowo numerów. Funkcja „updateCardPin” zajmuje się aktualizacją PIN-u w bazie danych.
 
-#### Why MainRandomPassword Exists
+#### Różnice między Main a MainRandomPassword
 
-"MainRandomPassword" exists as a separate functionality for resetting or initializing card PINs in the system. It can be used for mass
+Podczas gdy Main służy do pobierania danych z bazy danych i uruchamiania UI, MainRandomPassword ma specyficzne zastosowanie w generowaniu i aktualizowaniu losowych numerów PIN dla kart. Można przypuszczać, że MainRandomPassword jest narzędziem administracyjnym lub częścią procesu inicjalizacji systemu, gdzie konieczne jest zapewnienie, że wszystkie karty mają ustawione PIN-y, być może przed uruchomieniem systemu lub jako część regularnej procedury bezpieczeństwa.
 
-setting or resetting PINs, which is useful in various administrative scenarios, such as initial system launch, periodic resetting for security, or when an organization decides to change the PIN scheme for its cards. It is an example of how an application can include auxiliary or administrative tools in addition to its main functionality.
+#### Dlaczego istnieje MainRandomPassword
 
-### User Interface Dashboard
+„MainRandomPassword” istnieje jako oddzielna funkcjonalność do resetowania lub inicjalizacji PIN-ów kart w systemie. Może być używana do masowego ustawiania lub resetowania PIN-ów, co jest przydatne w różnych scenariuszach administracyjnych, takich jak pierwsze uruchomienie systemu, okresowe resetowanie dla bezpieczeństwa, czy też w przypadku, gdy organizacja decyduje się na zmianę schematu PIN-ów dla swoich kart. Jest to przykład, jak aplikacja może zawierać narzędzia pomocnicze lub administracyjne oprócz swojej głównej funkcjonalności.
 
-![project](img/photo12.png)
+### Interfejs użytkownika Dashboard
 
-- **'MAIN MENU' Header**: The screen title, informing the user that they are in the main menu of the application.
+<br>![projekt](img/photo12.png)
 
-- **'CHOOSE YOUR CARD TYPE' Selection Box**: A ComboBox that allows the user to select the type of card (e.g., Visa, Mastercard, etc.) they wish to interact with.
+- **Nagłówek 'MAIN MENU'**: Tytuł ekranu, informujący użytkownika, że znajduje się w głównym menu aplikacji.
 
-- **'INSERT YOUR CARD' Button**: A button that the user can use to "insert" the selected card, likely initiating a verification process or transaction.
+- **Pole wyboru 'CHOOSE YOUR CARD TYPE'**: ComboBox umożliwiający użytkownikowi wybór typu karty (np. Visa, Mastercard itd.), z którą chce interagować.
 
-- **Radio Buttons for Card Type**: A group of radio buttons allowing the user to choose the kind of card (ATM CARD, PAY CARD, CREDIT CARD) which may change the options or processes available depending on the selection.
+- **Przycisk 'INSERT YOUR CARD'**: Przycisk, który użytkownik może użyć do "włożenia" wybranej karty, co prawdopodobnie inicjuje proces weryfikacji lub transakcji.
 
-- **'LEAVE' Button**: Allows the user to exit the application.
+- **Radio Buttons dla typu karty**: Grupa przycisków radiowych pozwalających użytkownikowi wybrać rodzaj karty (ATM CARD, PAY CARD, CREDIT CARD), które mogą zmieniać opcje lub procesy dostępne w zależności od wyboru.
 
-- **'SET THE MUSIC VOLUME' Volume Adjustment**: A slider for adjusting the volume of sounds in the application, which may pertain to audio signals issued by the application during various actions.
+- **Przycisk 'LEAVE'**: Pozwala użytkownikowi na wyjście z aplikacji.
 
-- **'EXPORT' and 'IMPORT' Buttons**: Allow for exporting data to a CSV file and importing data from a CSV file.
+- **Regulacja głośności 'SET THE MUSIC VOLUME'**: Suwak do regulacji głośności dźwięków w aplikacji, co może dotyczyć sygnałów dźwiękowych wydawanych przez aplikację.
 
-![project](img/photo13.png)
+- **Przyciski 'EXPORT' i 'IMPORT'**: Umożliwiają eksport danych do pliku CSV oraz import danych z pliku CSV.
 
-- **File Selection Screens**: Appear after clicking the 'EXPORT' or 'IMPORT' buttons. They allow the user to choose the location to which to export data or from which to import data.
+<br>![projekt](img/photo13.png)
 
-![project](img/photo14.png)
+- **Ekrany wyboru pliku**: Pojawiają się po kliknięciu przycisków 'EXPORT' lub 'IMPORT'. Pozwalają użytkownikowi na wybór lokalizacji, do której eksportować dane, lub z której importować dane.
 
-- **Extended Dropdown List**: Displays all available card types that the user can select. In this case, it shows various types of payment cards, such as Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credit Bureau.
+<br>![projekt](img/photo14.png)
 
-- **Functionality**: When the user selects a card type and clicks 'INSERT YOUR CARD', the application may proceed to the next stage, which might require entering a PIN or performing another action.
+- **Rozszerzona lista rozwijana**: Wyświetla wszystkie dostępne typy kart, które użytkownik może wybrać. W tym przypadku pokazuje różne rodzaje kart płatniczych, takie jak Visa, American Express, Visa Electron, Mastercard, Diners Club, Japan Credi Bureau.
 
-- **'EXPORT' and 'IMPORT' Buttons**: Used to manage application data. 'EXPORT' allows saving data to a CSV file, which can be used for creating backups or transferring data between systems. 'IMPORT' enables loading data from a CSV file, useful for restoring data or updating the system with new information.
+- **Funkcjonalność**: Kiedy użytkownik wybierze typ karty i kliknie 'INSERT YOUR CARD', aplikacja może przechodzić do kolejnego etapu, który może wymagać wprowadzenia PIN-u lub wykonania innej czynności.
 
-- **Application Sounds**: The ability to adjust the volume indicates that the application includes multimedia elements, such as sounds, that may be played during various actions, for example, when a card is accepted or rejected, or during cash withdrawal.
+- **Przyciski 'EXPORT' i 'IMPORT'**: Służą do zarządzania danymi aplikacji. 'EXPORT' pozwala na zapisanie danych do pliku CSV, który może być używany do tworzenia kopii zapasowych lub przenoszenia danych między systemami. 'IMPORT' umożliwia wczytanie danych z pliku CSV, co jest przydatne przy przywracaniu danych lub aktualizacji systemu nowymi informacjami.
 
-Overall: The Dashboard is designed to enable easy interaction with the system and manage payment cards and transactions. All these elements are designed with intuitiveness in mind, so that the user can quickly and effectively use the functions offered by the system.
+- **Dźwięki w aplikacji**: Możliwość regulacji głośności wskazuje, że aplikacja zawiera elementy multimedialne, takie jak dźwięki, które mogą być odtwarzane podczas różnych akcji, na przykład gdy karta jest akceptowana lub odrzucana, lub podczas wypłaty gotówki.
 
-### PinWindow - PIN Entry Interface
+Ogólnie: Dashboard jest zaprojektowany w taki sposób, aby umożliwić łatwą interakcję z systemem i zarządzanie kartami płatniczymi i transakcjami. Wszystkie te elementy są zaprojektowane z myślą o intuicyjności, tak aby użytkownik mógł szybko i skutecznie korzystać z funkcji oferowanych przez system.
 
-![project](img/photo15.png)
+### PinWindow - Interfejs wprowadzania PIN
 
-- **"ENTER YOUR CARD PIN" Header**: Informs the user that they should enter their PIN here.
+<br>![projekt](img/photo15.png)
 
-- **PIN Entry Text Field**: Where the user enters their PIN. Typically, entered digits are obscured by asterisks or dots for security.
+- **Nagłówek "ENTER YOUR CARD PIN"**: Informuje użytkownika, że w tym miejscu powinien wprowadzić swój PIN.
 
-- **"ENTER" Button**: After entering the PIN, the user presses this button to submit and process the information.
+- **Pole tekstowe do wprowadzania PIN-u**: Miejsce, gdzie użytkownik wpisuje kod PIN. Zazwyczaj ukrywa wpisywane cyfry za pomocą gwiazdek lub kropek dla bezpieczeństwa.
 
-- **"RETURN TO THE MAIN MENU" Button**: Allows the user to return to the main menu without entering a PIN.
+- **Przycisk "ENTER"**: Po wprowadzeniu PIN-u, użytkownik naciska ten przycisk, aby zatwierdzić i przesłać informacje do systemu.
 
-![project](img/photo16.png)
+- **Przycisk "RETURN TO THE MAIN MENU"**: Umożliwia powrót do głównego menu bez wprowadzania PIN-u.
 
-- **PIN Validation**: The entered PIN is validated using defined rules. If the PIN is too short (less than 4 digits), the user receives an error message informing them of the incorrect PIN length.
+<br>![projekt](img/photo16.png)
 
-- **Account Lock**: If the user enters the wrong PIN several times in a row, the account is locked for a specific time, signaled by an appropriate message with a countdown of seconds remaining until unlocking.
+- **Walidacja PIN-u**: Wprowadzony PIN jest walidowany przy użyciu zdefiniowanych reguł. W przypadku, gdy PIN jest za krótki (mniej niż 4 cyfry), użytkownik otrzyma komunikat o błędzie, informujący o niewłaściwej długości PIN-u.
 
-![project](img/photo17.png)
+- **Blokada Konta**: Jeśli użytkownik wprowadzi błędny PIN kilka razy z rzędu, konto zostaje zablokowane na określony czas, co jest sygnalizowane przez odpowiedni komunikat z licznikiem sekund pozostałych do odblokowania.
 
-- **Event Handling**: Handling the "ENTER" Button: Upon clicking this button, the code processes the entered PIN and compares it to the PIN stored in the database. If the PIN is correct, the user may proceed; if not, an error message may be displayed, or the account may be locked.
+<br>![projekt](img/photo17.png)
 
-- **Return to the Main Menu**: The "RETURN TO THE MAIN MENU" button allows the user to cancel the process and return to the previous interface.
+- **Obsługa Zdarzeń**: Obsługa Przycisku "ENTER": Po kliknięciu tego przycisku, kod przetwarza wprowadzony PIN i porównuje go z PIN-em przechowywanym w bazie danych. Jeśli PIN jest poprawny, użytkownik może przejść dalej, jeśli nie - może zostać wyświetlony komunikat o błędzie lub blokada.
 
-- **Error Messages**: One of the pictures shows a message about a locked account, indicating that the system has implemented a security mechanism that locks access after several failed PIN entry attempts. Another picture shows a message stating that the PIN is too short, suggesting that the system expects a four-digit code.
+- **Powrót do Głównego Menu**: Przycisk "RETURN TO THE MAIN MENU" pozwala użytkownikowi anulować proces i wrócić do poprzedniego interfejsu.
 
-- **Backend (Code)**: In the code, the PinWindow class is responsible for creating and managing this window. It uses the checkPin method to verify the entered PIN. The system counts failed PIN entry attempts and can lock the account for a specific time (lockout
+- **Komunikaty o Błędach**: Na jednym ze zdjęć widać komunikat o zablokowanym koncie, co oznacza, że system zaimplementował mechanizm bezpieczeństwa, który blokuje dostęp po kilku nieudanych próbach wprowadzenia PIN-u. Na innym zdjęciu pojawia się komunikat informujący, że PIN jest za krótki, co sugeruje, że system oczekuje czterocyfrowego kodu.
 
-EndTime), as shown in one of the messages. In case of correct PIN entry, the application likely proceeds to the next window or performs the next action, which is not visible in the submitted code.
+- **Backend (Kod)**: W kodzie, klasa PinWindow jest odpowiedzialna za tworzenie i zarządzanie tym oknem. Używa ona metody checkPin do weryfikacji wprowadzonego PIN-u. System zlicza nieudane próby wprowadzenia PIN-u i może zablokować dostęp do konta na określony czas (lockoutEndTime), co zostało pokazane w jednym z komunikatów. W przypadku poprawnego wprowadzenia PIN-u, aplikacja prawdopodobnie przechodzi do kolejnego okna lub wykonuje kolejną akcję, która nie jest widoczna w przesłanym kodzie.
 
-Overall Analysis: PinWindow is a crucial element of the banking application, ensuring secure access to the user's account. PIN code verification, error handling, and account locking after failed attempts are standard practices in applications requiring authorization. The interface is simple and straightforward, minimizing the risk of user errors and enhancing security.
+Ogólna Analiza: PinWindow jest kluczowym elementem aplikacji bankowej, który zapewnia bezpieczeństwo dostępu do konta użytkownika. Weryfikacja kodu PIN, obsługa błędów i blokada konta po nieudanych próbach to standardowe praktyki w aplikacjach wymagających autoryzacji. Interfejs jest prosty i bezpośredni, co minimalizuje ryzyko błędów ze strony użytkownika i zwiększa bezpieczeństwo.
 
-### MenuWindow - Banking Operations Center
+### MenuWindow - Centrum Operacji Bankowych
 
-![project](img/photo18.png)
+<br>![projekt](img/photo18.png)
 
-- **"WELCOME TO YOUR ACCOUNT" Header**: Welcomes the user and confirms successful authorization.
+- **Nagłówek "WELCOME TO YOUR ACCOUNT"**: Przywitanie użytkownika i potwierdzenie, że został pomyślnie zautoryzowany.
 
-- **"SELECT OPERATION" Section**: A list of options the user can select from:
+- **Sekcja "SELECT OPERATION"**: Lista opcji, z których użytkownik może wybrać:
 
-  - CHECK YOUR ACCOUNT STATE: Allows the user to check the current state of their account, such as the balance.
+  - CHECK YOUR ACCOUNT STATE: Pozwala użytkownikowi sprawdzić bieżący stan swojego konta, takie jak saldo.
 
-  - CASH PAYCHECK: A function that enables the user to withdraw funds from their account.
+  - CASH PAYCHECK: Funkcja umożliwiająca użytkownikowi wypłatę środków z konta.
 
-  - CASH PAYMENT: Used for depositing money into the account or making payments.
+  - CASH PAYMENT: Służy do wpłacania pieniędzy na konto lub dokonywania płatności.
 
-  - TRANSACTION HISTORY: Review of the transaction history conducted through the account.
+  - TRANSACTION HISTORY: Przegląd historii transakcji przeprowadzonych za pomocą konta.
 
-- **"SLIDE CARD AND RETURN TO THE DASHBOARD" Button**: Allows the user to quickly return to the main menu of the application.
+- **Przycisk "SLIDE CARD AND RETURN TO THE DASHBOARD"**: Umożliwia użytkownikowi szybki powrót do głównego menu aplikacji.
 
-**Code and Its Functionality:**
+**Kod i Jego Funkcjonalność:**
 
-In the code, the MenuWindow class is responsible for displaying and managing this window. It includes the logic for initializing and handling user interactions:
+W kodzie, klasa MenuWindow jest odpowiedzialna za wyświetlenie i zarządzanie tym oknem. Zawiera ona logikę inicjalizującą i obsługującą interakcje użytkownika:
 
-- **Function Buttons**: Each button corresponds to initiating a specific operation. Clicking any of them may lead to opening a new window with the relevant function, e.g., checking the account balance, making a withdrawal, making a deposit, or viewing transaction history.
+- **Przyciski Funkcji**: Każdy przycisk odpowiada za inicjowanie określonej operacji. Kliknięcie któregokolwiek z nich może prowadzić do otwarcia nowego okna z odpowiednią funkcją, np. sprawdzenie stanu konta, wypłata, wpłata czy historia transakcji.
 
-- **Returning to the Dashboard**: The "RETURN TO THE MAIN MENU" button ends the MenuWindow session and restores the Dashboard, which can be achieved by closing the current window and opening a new window of the Dashboard class.
+- **Powrót do Dashboardu**: Przycisk "RETURN TO THE MAIN MENU" kończy sesję w MenuWindow i przywraca Dashboard, co może być realizowane przez zamknięcie obecnego okna i otwarcie nowego okna klasy Dashboard.
 
-- **Dialogs and Actions**: The application implements dialogs confirming user actions or displaying error messages, which however are not shown on the provided screenshot. Button actions are handled by ActionListener, which responds to clicks and performs specified methods, such as dispose() to close the current window and setVisible(true) to display a new window.
+- **Dialogi i Akcje**: W aplikacji są zaimplementowane dialogi potwierdzające akcje użytkownika lub wyświetlające komunikaty o błędach, które jednak nie są pokazane na dostarczonym zrzucie ekranu. Akcje przycisków są obsługiwane przez ActionListener, które reagują na kliknięcia i wykonują określone metody, takie jak dispose() do zamknięcia bieżącego okna oraz setVisible(true) do wyświetlenia nowego okna.
 
-**Overall Analysis:**
+**Ogólna Analiza:**
 
-MenuWindow is designed to be a user-friendly account management center that provides easy access to basic banking functions. The next steps after selecting an option are likely implemented in other classes and windows that were part of the submitted code, such as BalanceWindow, PaycheckWindow, PaymentWindows, and HistoryWindow, corresponding to the detailed handling of each operation.
+MenuWindow jest zaprojektowane, aby być przyjaznym dla użytkownika centrum zarządzania kontem bankowym, które umożliwia łatwy dostęp do podstawowych funkcji bankowych. Kolejne kroki po wybraniu opcji są prawdopodobnie zaimplementowane w innych klasach i oknach, które były częścią dostarczonego kodu, takich jak BalanceWindow, PaycheckWindow, PaymentWindows i HistoryWindow, odpowiadających za szczegółową obsługę każdej z operacji.
 
-### BalanceWindow - Account Balance Display
+### BalanceWindow - Wyświetlanie Sald Konta
 
-![project](img/photo19.png)
+<br>![projekt](img/photo19.png)
 
-- **"BALANCE" Header**: Clearly informs the user that they are in the account balance section.
+- **Nagłówek "BALANCE"**: Wyraźnie informuje użytkownika, że znajduje się w sekcji dotyczącej salda konta.
 
-- **"YOUR ACCOUNT STATE" Account Status Information**: Displays the current account balance of the user. In the submitted picture, the balance is "15000,00 PLN", but for each card, this is a value retrieved from the database.
+- **Informacja o stanie konta "YOUR ACCOUNT STATE"**: Wyświetla aktualne saldo konta użytkownika. Na przesłanym zdjęciu saldo to "15000,00 PLN", lecz dla każdej karty jest to wartość pobrana z bazy.
 
-- **"RETURN TO THE MENU WINDOW" Button**: Allows the user to return to the previous menu (MenuWindow) to choose other options.
+- **Przycisk "RETURN TO THE MENU WINDOW"**: Pozwala użytkownikowi na powrót do poprzedniego menu (MenuWindow) w celu wybrania innych opcji.
 
-- **"SLIDE CARD AND RETURN TO THE DASHBOARD" Button**: Enables exit from the current view and return to the main menu of the application (Dashboard).
+- **Przycisk "SLIDE CARD AND RETURN TO THE DASHBOARD"**: Umożliwia wyjście z obecnego widoku i powrót do głównego menu aplikacji (Dashboard).
 
-**Code and Its Functionality:**
+**Kod i Jego Funkcjonalność:**
 
-In the code, the BalanceWindow class is responsible for displaying and managing this window. It uses a connection to the database to retrieve and display the current account balance of the user:
+W kodzie, klasa BalanceWindow jest odpowiedzialna za wyświetlenie i zarządzanie tym oknem. Używa ona połączenia z bazą danych do pobrania i wyświetlenia aktualnego salda konta użytkownika:
 
-- **Retrieving the Balance**: In the showBalance() method, BalanceWindow connects to the database using DatabaseConnector.connect(). Then, a SQL query is executed that retrieves the account balance associated with the specific card identifier of the user.
+- **Pobieranie salda**: W metodzie showBalance(), BalanceWindow łączy się z bazą danych za pomocą DatabaseConnector.connect(). Następnie wykonywane jest zapytanie SQL, które pobiera saldo konta związane z określonym identyfikatorem karty użytkownika.
 
-- **Button Event Handling**: Buttons in the window handle actions such as closing the BalanceWindow and opening the MenuWindow or Dashboard through methods dispose() and setVisible(true). This allows the user to navigate easily between different parts of the application.
+- **Obsługa zdarzeń przycisków**: Przyciski w oknie obsługują akcje, takie jak zamykanie okna BalanceWindow i otwieranie okna MenuWindow lub Dashboard poprzez metody dispose() i setVisible(true). Dzięki temu użytkownik może łatwo nawigować między różnymi częściami aplikacji.
 
-**Overall Analysis:**
+**Ogólna Analiza:**
 
-BalanceWindow is a simple and intuitive tool that provides users with quick and easy access to information about the status of their financial resources. It is a key feature in banking applications, allowing for ongoing monitoring of financial resources, essential for managing personal finances.
+BalanceWindow to proste i intuicyjne narzędzie, które umożliwia użytkownikom szybki i łatwy dostęp do informacji o stanie swoich środków finansowych. Jest to kluczowa funkcja w aplikacjach bankowych, gdyż pozwala na bieżące monitorowanie zasobów finansowych, co jest istotne z punktu widzenia zarządzania osobistymi finansami.
 
-### PaycheckWindow - Withdrawal of Funds
+### PaycheckWindow - Wypłata Środków
 
-![project](img/photo20.png)
+<br>![projekt](img/photo20.png)
 
-- **Description**: This window is used for withdrawing funds from the user's account. This functionality is visible in the code in the PaycheckWindow class, where the user enters the amount they wish to withdraw and then confirms the operation with the "ENTER" button.
+- **Opis**: Okno to służy do wypłaty środków z konta użytkownika. Funkcjonalność ta jest widoczna w kodzie w klasie PaycheckWindow, gdzie użytkownik wpisuje kwotę, którą chce wypłacić, a następnie potwierdza operację przyciskiem "ENTER".
 
-- **Functionality**:
+- **Funkcjonalność**:
 
-  - Text Field: Where the user can enter the withdrawal amount.
-  - "ENTER" Button: Used to confirm the entered amount and initiate the withdrawal operation.
-  - Navigation Buttons: Allow the user to return to the main menu ("RETURN TO THE MENU WINDOW") or the main application screen ("SLIDE CARD AND RETURN TO THE DASHBOARD").
+  - Pole tekstowe: Miejsce, gdzie użytkownik może wpisać kwotę do wypłaty.
+  - Przycisk "ENTER": Służy do zatwierdzenia wprowadzonej kwoty i inicjacji operacji wypłaty.
+  - Przyciski nawigacyjne: Pozwalają użytkownikowi na powrót do głównego menu ("RETURN TO THE MENU WINDOW") lub do głównego ekranu aplikacji ("SLIDE CARD AND RETURN TO THE DASHBOARD").
 
-- \*\*Code
+- **Kod i Jego Funkcjonalność**:
 
-and Its Functionality\*\*:
+  - Klasa PaycheckWindow wykorzystuje metody takie jak withdrawMoney() do przetwarzania wypłaty środków.
+  - Sprawdza, czy wprowadzona kwota jest prawidłowa i czy stan konta pozwala na realizację transakcji.
+  - Aktualizuje stan konta w bazie danych za pomocą zapytań SQL.
+  - Rejestruje transakcję w historii konta.
+  - Wyświetla stosowny komunikat z wynikiem operacji.
 
-- The PaycheckWindow class uses methods such as withdrawMoney() to process the withdrawal of funds.
-- It checks if the entered amount is valid and if the account balance allows for the transaction.
-- It updates the account balance in the database using SQL queries.
-- It records the transaction in the account history.
-- It displays an appropriate message with the operation outcome.
+- **Walidacja i Bezpieczeństwo**:
+  - Kod zawiera mechanizmy walidacji wprowadzonych danych oraz zabezpieczenia przed przekroczeniem dostępnych środków.
+  - W przypadku błędów walidacji, użytkownik otrzymuje komunikaty, które informują go o błędzie i pozwalają na korektę akcji.
 
-- **Validation and Security**:
-  - The code contains validation mechanisms for the entered data and security measures to prevent exceeding available funds.
-  - In case of validation errors, the user receives messages informing them of the error and allowing them to correct the action.
+### PaymentWindow - Wpłata Środków
 
-### PaymentWindow - Deposit of Funds
+<br>![projekt](img/photo21.png)
 
-![project](img/photo21.png)
+- **Opis**: Okno „PaymentWindow” działa podobnie do PaycheckWindow, ale służy do wpłacania pieniędzy na konto użytkownika. Użytkownik wpisuje kwotę do wpłaty i potwierdza operację.
 
-- **Description**: The "PaymentWindow" operates similarly to PaycheckWindow but is used for depositing money into the user's account. The user enters the amount to deposit and confirms the operation.
+- **Funkcjonalność**:
 
-- **Functionality**:
+  - Pole tekstowe: Miejsce, gdzie użytkownik może wpisać kwotę do wpłaty.
+  - Przycisk "ENTER": Służy do zatwierdzenia wprowadzonej kwoty i inicjacji operacji wpłaty.
+  - Przyciski nawigacyjne: Pozwalają użytkownikowi na powrót do głównego menu ("RETURN TO THE MENU WINDOW") lub do głównego ekranu aplikacji ("SLIDE CARD AND RETURN TO THE DASHBOARD").
 
-  - Text Field: Where the user can enter the deposit amount.
-  - "ENTER" Button: Used to confirm the entered amount and initiate the deposit operation.
-  - Navigation Buttons: Allow the user to return to the main menu ("RETURN TO THE MENU WINDOW") or the main application screen ("SLIDE CARD AND RETURN TO THE DASHBOARD").
+- **Kod i Jego Funkcjonalność**:
 
-- **Code and Its Functionality**:
+  - Klasa PaymentWindow wykorzystuje metody takie jak depositMoney() do przetwarzania wpłaty środków.
+  - Sprawdza, czy wprowadzona kwota jest prawidłowa i czy operacja może być zrealizowana.
+  - Aktualizuje stan konta w bazie danych za pomocą zapytań SQL.
+  - Rejestruje transakcję w historii konta.
+  - Wyświetla stosowny komunikat z wynikiem operacji.
 
-  - The PaymentWindow class uses methods such as depositMoney() to process the deposit of funds.
-  - It checks if the entered amount is valid and if the operation can be executed.
-  - It updates the account balance in the database using SQL queries.
-  - It records the transaction in the account history.
-  - It displays an appropriate message with the operation outcome.
+- **Walidacja i Bezpieczeństwo**:
+  - Kod zawiera mechanizmy walidacji wprowadzonych danych oraz zabezpieczenia przed nieprawidłowymi operacjami finansowymi.
+  - W przypadku błędów walidacji, użytkownik otrzymuje komunikaty, które informują go o błędzie i pozwalają na korektę akcji.
 
-- **Validation and Security**:
-  - The code contains validation mechanisms for the entered data and security measures to prevent improper financial operations.
-  - In case of validation errors, the user receives messages informing them of the error and allowing them to correct the action.
+**Ogólna Analiza**:
+Oba okna dialogowe są zaprojektowane w sposób prosty i intuicyjny, co sprzyja łatwemu korzystaniu z funkcji bankowych bez konieczności bezpośredniego kontaktu z personelem banku. Jest to wygodna funkcja w aplikacjach bankowych, pozwalająca użytkownikom na szybkie zarządzanie swoimi środkami finansowymi.
 
-**Overall Analysis**:
-Both dialog windows are designed in a simple and intuitive manner, facilitating easy use of banking functions without direct contact with bank personnel. This is a convenient feature in banking applications, allowing users to quickly manage their financial resources.
+### HistoryWindow - Historia Transakcji
 
-### HistoryWindow - Transaction History
+<br>![projekt](img/photo22.png)
 
-![project](img/photo22.png)
+- **Opis**: HistoryWindow jest oknem w aplikacji bankowej, które wyświetla historię transakcji przeprowadzonych przez użytkownika.
 
-- **Description**: HistoryWindow is a window in the banking application that displays the transaction history made by the user.
+- **Główne Elementy HistoryWindow**:
 
-- **Main Elements of HistoryWindow**:
+  - Nagłówek "TRANSACTION HISTORY": Informuje użytkownika, że znajduje się w sekcji historii transakcji.
+  - Tabela "ACCOUNT STATEMENT": Wyświetla listę transakcji zawierających ID transakcji, ID karty, typ transakcji (wpłata, wypłata), kwotę i datę.
+  - Przyciski "EDIT", "DELETE", "CLEAR":
+    - EDIT: Umożliwia edycję wybranej transakcji.
+    - DELETE: Umożliwia usunięcie wybranej transakcji z historii.
+    - CLEAR: Czyści zaznaczone wiersze w tabeli.
+  - Przyciski nawigacyjne:
+    - RETURN TO THE MENU WINDOW: Pozwala użytkownikowi na powrót do głównego menu operacji (MenuWindow).
+    - SLIDE CARD AND RETURN TO THE DASHBOARD: Umożliwia wyjście z obecnego widoku i powrót do głównego menu aplikacji (Dashboard).
 
-  - "TRANSACTION HISTORY" Header: Informs the user that they are in the transaction history section.
-  - "ACCOUNT STATEMENT" Table: Displays a list of transactions including transaction ID, card ID, transaction type (deposit, withdrawal), amount, and date.
-  - "EDIT", "DELETE", "CLEAR" Buttons:
-    - EDIT: Allows editing the selected transaction.
-    - DELETE: Allows deleting the selected transaction from the history.
-    - CLEAR: Clears selected rows in the table.
-  - Navigation Buttons:
-    - RETURN TO THE MENU WINDOW: Allows the user to return to the main operation menu (MenuWindow).
-    - SLIDE CARD AND RETURN TO THE DASHBOARD: Enables exit from the current view and return to the main application menu (Dashboard).
+- **Kod i Jego Funkcjonalność**: W kodzie, klasa HistoryWindow jest odpowiedzialna za wyświetlenie historii transakcji użytkownika. Używa ona połączenia z bazą danych do pobrania historii transakcji i wyświetla je w tabeli. Funkcjonalność tej klasy obejmuje:
 
-- **Code and Its Functionality**: In the code, the HistoryWindow class is responsible for displaying the user's transaction history. It uses a connection to the database to retrieve the transaction history and displays it in a table. The functionality of this class includes:
+  - Ładowanie historii transakcji: Metoda loadTransactionHistory() pobiera z bazy danych i wyświetla transakcje.
+  - Edycja i usuwanie transakcji: Przyciski "EDIT" i "DELETE" są połączone z funkcjami, które pozwalają na modyfikowanie i usuwanie rekordów z tabeli. Usunięcie rekordu jest odzwierciedlone również w bazie danych.
+  - Czyszczenie danych: Przycisk "CLEAR" pozwala na wyczyszczenie danych z tabeli, ale niekoniecznie usuwa je z bazy danych.
 
-  - Loading transaction history: The loadTransactionHistory() method retrieves and displays transactions from the database.
-  - Editing and deleting transactions: The "EDIT" and "DELETE" buttons are connected to functions that allow for modifying and deleting records from the table. Deleting a record is also reflected in the database.
-  - Clearing data: The "CLEAR" button allows for clearing data from the table, but not necessarily from the database.
+- **Walidacja i Bezpieczeństwo**: Kod zawiera mechanizmy walidacji i zabezpieczeń, aby upewnić się, że operacje edycji i usuwania są wykonane prawidłowo i że użytkownik posiada odpowiednie uprawnienia do wykonania tych akcji.
 
-- **Validation and Security**: The code includes validation and security mechanisms to ensure that editing and deleting operations are correctly performed and that the user has the appropriate permissions to perform these actions.
+- **Interakcje z Użytkownikiem**: Przyciski "EDIT", "DELETE" i "CLEAR" w tabeli mogą wywoływać okna dialogowe lub dodatkowe formularze, gdzie użytkownik może edytować lub potwierdzić swoje działania.
 
-- **User Interactions**: The "EDIT", "DELETE", and "CLEAR" buttons in the table may invoke dialog boxes or additional forms where the user can edit or confirm their actions.
+- **Ogólna Analiza**:
+  - HistoryWindow umożliwia użytkownikowi przeglądanie i zarządzanie jego historią transakcji, co jest kluczową funkcją dla aplikacji bankowych.
+  - Użytkownik ma możliwość wglądu w swoją aktywność finansową, co pozwala na lepsze zarządzanie finansami.
+  - Kod za tym oknem zapewnia niezbędne funkcje do interakcji z bazą danych, obsługi zdarzeń interfejsu użytkownika oraz prezentacji danych w sposób czytelny i dostępny.
 
-- **Overall Analysis**:
-  - HistoryWindow allows the user to review and manage their transaction history, which is a key function for banking applications.
-  - The user has access to their financial activity, allowing for better financial management.
-  - The code behind this window provides the necessary functions for database interaction, user interface event handling, and data presentation in a clear and accessible manner.
+### PODSUMOWANIE
 
-### SUMMARY
+Cały program, który został opisany przez różne okna interfejsu użytkownika i odpowiadający im kod, jest kompleksowym systemem zarządzania kontem bankowym, prawdopodobnie przeznaczonym dla bankomatów lub aplikacji bankowych online.
 
-The entire program, described through various user interface windows and corresponding code, is a comprehensive banking account management system, likely intended for ATMs or online banking applications.
+- **Główne Funkcje**:
 
-- **Main Functions**:
-  - **User Authentication**: The system starts with user authentication using the PinWindow, where the user must enter their PIN code to access their account.
-  - **Dashboard**: After successful
+  - **Autentykacja Użytkownika**: System rozpoczyna się od autentykacji użytkownika przy użyciu PinWindow, gdzie użytkownik musi wprowadzić swój kod PIN, aby uzyskać dostęp do swojego konta.
+  - **Dashboard**: Po pomyślnym zalogowaniu się, użytkownik jest przenoszony do Dashboard, który działa jako centrum nawigacyjne, oferując różne opcje, takie jak wyświetlanie salda, wypłaty, wpłaty i historii transakcji.
+  - **Operacje Konta**:
+    - **BalanceWindow**: Umożliwia użytkownikowi sprawdzenie bieżącego salda konta.
+    - **PaycheckWindow**: Pozwala na wypłatę określonej kwoty z konta, z odpowiednimi walidacjami, aby zapobiec przekroczeniu dostępnych środków.
+    - **PaymentWindow**: Umożliwia wpłatę pieniędzy na konto użytkownika.
+    - **HistoryWindow**: Prezentuje użytkownikowi historię wykonanych transakcji, dając wgląd w aktywność konta oraz umożliwiając zarządzanie tymi transakcjami.
+  - **Zarządzanie Danymi**:
+    - Eksport i import danych w formacie CSV, umożliwiający backup i transfer danych między systemami.
+    - Edycja i usuwanie rekordów w historii transakcji, co pozwala na utrzymanie porządku i precyzyjne śledzenie aktywności finansowej.
 
-login, the user is directed to the Dashboard, which serves as a navigation hub, offering various options such as viewing the balance, making withdrawals, making deposits, and viewing transaction history.
+- **Bezpieczeństwo i Walidacja**: Program zawiera szereg mechanizmów bezpieczeństwa, w tym blokadę konta po kilku nieudanych próbach wprowadzenia PIN-u, walidację kwot transakcji w celu uniknięcia nadmiernego zadłużenia, oraz potwierdzenia i komunikaty błędów, które informują użytkownika o stanie operacji.
 
-- **Account Operations**:
-  - **BalanceWindow**: Allows the user to check the current balance of their account.
-  - **PaycheckWindow**: Enables the withdrawal of a specified amount from the account, with appropriate validations to prevent overdrawing.
-  - **PaymentWindow**: Allows for the deposit of money into the user's account.
-  - **HistoryWindow**: Presents the user with their transaction history, providing insight into account activity and enabling transaction management.
-- **Data Management**:
+- **Użytkownik i Interfejs**: Interfejs użytkownika został zaprojektowany z myślą o prostocie i intuicyjności, co pozwala użytkownikowi na łatwe nawigowanie i wykonanie potrzebnych operacji finansowych bez konieczności zaawansowanej wiedzy technicznej.
 
-  - Export and import of data in CSV format, allowing for backup and data transfer between systems.
-  - Editing and deleting records in the transaction history, facilitating order and precise tracking of financial activity.
+Program jako całość stanowi kompletny system do zarządzania kontem bankowym, który integruje kluczowe funkcje wymagane dla nowoczesnych aplikacji bankowych. Zapewnia on użytkownikowi kontrolę nad swoimi finansami poprzez proste w użyciu narzędzia do monitorowania i zarządzania swoimi środkami oraz historią transakcji. Jest to przykład dobrze zintegrowanego oprogramowania, które skupia się na użytkowniku i jego potrzebach, zapewniając przy tym bezpieczeństwo i zaufanie do przeprowadzanych operacji finansowych.
 
-- **Security and Validation**: The program includes a range of security mechanisms, including account locking after several failed PIN entry attempts, transaction amount validation to avoid excessive indebtedness, and confirmations and error messages that inform the user of the operation status.
 
-- **User and Interface**: The user interface is designed to be simple and intuitive, allowing the user to easily perform the needed financial operations without advanced technical knowledge.
 
-The program as a whole constitutes a complete banking account management system that integrates key functions required for modern banking applications. It provides the user with control over their finances through easy-to-use tools for monitoring and managing their funds and transaction history. It is an example of well-integrated software that focuses on the user and their needs, ensuring security and trust in financial operations conducted.
+# 6. Podsumowanie
 
-# 6. Summary
+Opracowanie aplikacji GUI: Stworzono zaawansowaną aplikację z graficznym interfejsem użytkownika, która naśladuje działanie rzeczywistego bankomatu. Interfejs został zaprojektowany tak, aby był intuicyjny i łatwy w obsłudze, co umożliwia użytkownikom wykonywanie różnych operacji bankowych w sposób, który odzwierciedla rzeczywiste doświadczenia z bankomatem.
 
-Development of a GUI application: An advanced application with a graphical user interface was created, simulating the operation of a real ATM. The interface was designed to be intuitive and easy to use, allowing users to perform various banking operations in a way that mirrors real ATM experiences.
+Wykorzystanie Java Swing i MySQL: Aplikacja została zbudowana w środowisku Java Swing, co zapewnia stabilność i efektywność działania. Zastosowanie MySQL do zarządzania bazą danych gwarantuje bezpieczeństwo i integralność danych, co jest kluczowe w symulacji operacji bankowych.
 
-Use of Java Swing and MySQL: The application was built using the Java Swing environment, ensuring stability and efficiency. The use of MySQL for database management guarantees the security and integrity of data, which is crucial in simulating banking operations.
+Implementacja funkcji bankowych: Zaimplementowano podstawowe funkcje bankomatu, takie jak weryfikacja PIN, sprawdzanie salda, realizacja wypłat i wpłat gotówki oraz przeglądanie historii transakcji. Te funkcje zapewniają realistyczne doświadczenie korzystania z bankomatu, co jest niezbędne w szkoleniach i edukacji pracowników banków.
 
-Implementation of banking functions: Basic ATM functions such as PIN verification, balance checking, cash withdrawal and deposit, and viewing transaction history were implemented. These functions provide a realistic ATM usage experience, essential for training and educating bank employees.
+Dodatkowe funkcje dla użytkownika: Wprowadzono unikalne funkcje, takie jak regulacja głośności i możliwość eksportu/importu danych bazy, co zwiększa funkcjonalność aplikacji i poprawia doświadczenie użytkownika.
 
-Additional features for the user: Unique features such as volume adjustment and database data export/import were introduced, increasing the application's functionality and improving the user experience.
+Planowany rozwój funkcjonalności: Projekt przewiduje rozszerzenie funkcjonalności o nowe opcje bankowe i usprawnienia związane z bezpieczeństwem. Planowane jest także ulepszenie interfejsu użytkownika, aby był jeszcze bardziej intuicyjny i dostępny.
 
-Planned functional development: The project plans to extend functionalities to include new banking options and security improvements. There is also a plan to enhance the user interface to make it even more intuitive and accessible.
+Integracja z systemami bankowymi i testowanie: Planuje się integrację z dodatkowymi systemami bankowymi, co pozwoli na szersze wykorzystanie aplikacji w rzeczywistym środowisku bankowym. Rozbudowa możliwości testowania aplikacji pozwoli na lepsze przygotowanie do rzeczywistych scenariuszy funkcjonowania bankomatów.
 
-Integration with banking systems and testing: Integration with additional banking systems is planned, allowing for broader application use in a real banking environment. The expansion of testing capabilities will better prepare for real ATM operation scenarios.
+Zaawansowane techniki szyfrowania i zabezpieczeń: W celu ochrony danych użytkowników, planowane jest wdrożenie zaawansowanych technik szyfrowania i zabezpieczeń, co jest kluczowe w kontekście ochrony informacji finansowych i osobowych.
 
-Advanced encryption techniques and security measures: To protect user data, the implementation of advanced encryption techniques and security measures is planned, which is key in the context of financial and personal information protection.
+## 6.1. Dalsze planowane prace rozwojowe projektu obejmują:
 
-## 6.1. Further planned project development work includes:
+1. Integracja z mobilnymi systemami płatności: Rozszerzenie funkcjonalności bankomatu o obsługę płatności zbliżeniowych i mobilnych, co zwiększy dostępność i wygodę dla użytkowników.
 
-1. Integration with mobile payment systems: Expanding ATM functionalities to support contactless and mobile payments, increasing accessibility and convenience for users.
+2. Zastosowanie uczenia maszynowego do profilowania ryzyka: Implementacja algorytmów uczenia maszynowego w celu wykrywania podejrzanych transakcji i zapobiegania oszustwom.
 
-2. Application of machine learning for risk profiling: Implementing machine learning algorithms to detect suspicious transactions and prevent fraud.
+3. Rozbudowa interfejsu użytkownika: Modernizacja UI/UX, aby była bardziej intuicyjna i przyjazna dla użytkownika, potencjalnie z wykorzystaniem technologii dotykowych i graficznych.
 
-3. User interface enhancement: Modernizing the UI/UX to be more intuitive and user-friendly, potentially incorporating touch technology and graphical elements.
+4. Wprowadzenie funkcji personalizacji: Pozwolenie użytkownikom na dostosowanie interfejsu bankomatu do indywidualnych preferencji, np. wybór języka czy wyglądu ekranu.
 
-4. Introduction of customization features: Allowing users to personalize the ATM interface according to individual preferences, e.g., language selection or screen appearance.
+5. Zwiększenie interaktywności: Dodanie interaktywnych tutoriali pomagających nowym użytkownikom w nauczeniu się obsługi bankomatu.
 
-5. Increasing interactivity: Adding interactive tutorials to help new users learn how to use the ATM.
+6. Bezpieczeństwo cybernetyczne: Wzmocnienie zabezpieczeń przez wprowadzenie nowoczesnych rozwiązań kryptograficznych i multi-faktorowej autentykacji.
 
-6. Cybersecurity enhancement: Strengthening security measures by introducing modern cryptographic solutions and multi-factor authentication.
+7. Ekspansja na nowe rynki: Dostosowanie oprogramowania do wymagań i specyfikacji różnych krajów i instytucji finansowych, co pozwoli na globalne wdrożenie systemu.
 
-7. Expansion to new markets: Adapting the software to meet the requirements and specifications of different countries and financial institutions, allowing for global system deployment.
+8. Wdrażanie aktualizacji: Regularne aktualizacje oprogramowania w celu wprowadzania nowych funkcji i utrzymania zgodności z najnowszymi standardami branżowymi.
 
-8. Implementation of updates: Regular software updates to introduce new features and maintain compatibility with the latest industry standards.
+Każdy z tych punktów można by dalej rozwijać, uwzględniając specyficzne wymagania i cele projektu.
 
-Each of these points can be further developed, considering specific requirements and goals of the project.
+# 7. Literatura
 
-# 7. Literature
+W celu zgłębienia wiedzy na temat systemów bankomatów oraz ogólnie systemów transakcyjnych, można sięgnąć do następujących źródeł:
 
-To deepen knowledge about ATM systems and transactional systems in general, the following sources can be referred to:
+## 7.1. Książki i Podręczniki
 
-## 7.1. Books and Textbooks
+1. "Bank 3.0: Why Banking Is No Longer Somewhere You Go But Something You Do" - Brett King. Książka ta dostarcza wglądu w zmiany technologiczne w bankowości i przyszłość transakcji finansowych.
 
-1. "Bank 3.0: Why Banking Is No Longer Somewhere You Go But Something You Do" - Brett King. This book provides insights into technological changes in banking and the future of financial transactions.
+2. "The ATM and the Internet of Things" - Richard P. Smyth. Pozycja ta omawia rozwój bankomatów w kontekście rosnącej sieci urządzeń połączonych przez Internet.
 
-2. "The ATM and the Internet of Things" - Richard P. Smyth. This work discusses the development of ATMs in the context of the growing network of Internet-connected devices.
+3. "Designing the Digital Experience: How to Use EXPERIENCE DESIGN Tools & Techniques to Build Websites Customers Love" - David Lee King. Ta książka jest przydatna do zrozumienia jak projektować przyjazne użytkownikowi interfejsy dla aplikacji bankowych.
 
-3. "Designing the Digital Experience: How to Use EXPERIENCE DESIGN Tools & Techniques to Build Websites Customers Love" - David Lee King. This book is useful for understanding how to design user-friendly interfaces for banking applications
+## 7.2. Artykuły
 
-.
+1. "How ATMs Work" - Artykuł w czasopiśmie "How Stuff Works", który szczegółowo wyjaśnia działanie bankomatów.
 
-## 7.2. Articles
+2. "The Evolution of Automated Teller Machines" - Artykuł naukowy omawiający historię i rozwój bankomatów.
 
-1. "How ATMs Work" - An article in "How Stuff Works" magazine that explains the functioning of ATMs in detail.
+## 7.3. Linki do Stron WWW
 
-2. "The Evolution of Automated Teller Machines" - A scientific article discussing the history and development of ATMs.
+1. [Official Documentation of Java Platform, Standard Ed.](https://docs.oracle.com/javase/8/docs/api/) - Dokumentacja Java SE dostarcza informacji na temat używania języka Java, który jest często wykorzystywany do tworzenia aplikacji bankomatów.
 
-## 7.3. Links to Websites
+2. [Stack Overflow](https://stackoverflow.blog) - Społeczność programistów, gdzie można znaleźć odpowiedzi na wiele pytań związanych z problemami programistycznymi, w tym związanymi z tworzeniem oprogramowania bankowego.
 
-1. [Official Documentation of Java Platform, Standard Ed.](https://docs.oracle.com/javase/8/docs/api/) - The Java SE documentation provides information about using Java, which is often used to create ATM software.
+3. [GitHub](https://github.com/) - Na tej platformie można znaleźć projekty open-source związane z systemami bankomatów, które mogą służyć jako przykład lub punkt wyjścia dla własnych projektów.
 
-2. [Stack Overflow](https://stackoverflow.blog) - A community of developers where you can find answers to many programming-related questions, including those related to creating banking software.
-
-3. [GitHub](https://github.com/) - This platform can find open-source projects related to ATM systems, which can serve as examples or starting points for your own projects.
-
-Using these sources significantly enriched my knowledge about ATM systems, their security, user interface, and best practices in creating software in this field.
+Korzystanie z wymienionych źródeł znacząco wzbogaciło moją wiedzę na temat systemów bankomatów, ich bezpieczeństwa, interfejsu użytkownika oraz najlepszych praktyk w tworzeniu oprogramowania w tej dziedzinie.
